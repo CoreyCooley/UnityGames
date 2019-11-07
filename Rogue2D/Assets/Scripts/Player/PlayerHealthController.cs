@@ -48,10 +48,9 @@ public class PlayerHealthController : MonoBehaviour
 
     public void DamagePlayer()
     {
-        Instantiate(player.hitEffect, player.transform.position, player.transform.rotation);
-
         if (invincibleCounter <= 0)
         {
+            Instantiate(player.hitEffect, player.transform.position, player.transform.rotation);
             currentHealth--;
             ui.healthSlider.value = currentHealth;
             ui.healthText.text = currentHealth + " / " + maxHealth;

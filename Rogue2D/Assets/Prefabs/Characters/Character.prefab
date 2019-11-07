@@ -472,3 +472,7 @@ MonoBehaviour:
   hitEffect: {fileID: 6981141013488674254, guid: 2269e0153ecf1d1489bb3016b8c49900,
     type: 3}
   bodySR: {fileID: 7343484030683990447}
+  dashSpeed: 8
+  dashLenght: 0.5
+  dashCooldown: 1.5
+  dashInvincibility: 0.5

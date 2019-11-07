@@ -31,7 +31,8 @@ public class PlayerController : MonoBehaviour
     public float dashLenght = .5f;
     public float dashCooldown = 1f;
     public float dashInvincibility = 1.5f;
-    private float dashCounter;
+    [HideInInspector]
+    public float dashCounter;
     private float dashCoolCounter;
     
     
