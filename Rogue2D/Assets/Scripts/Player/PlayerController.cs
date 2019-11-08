@@ -15,13 +15,16 @@ public class PlayerController : MonoBehaviour
     public int health = 150;
     public GameObject[] deathSplatters;
     public GameObject hitEffect;
-    public SpriteRenderer bodySR;    
+    public SpriteRenderer bodySR;
+    public int dashSound = 8;
+    public int weaponSound = 12;
 
     private Animator anim;
     private Vector2 moveInput;
     private Rigidbody2D playerRb;
     private Camera playerCam;
     private PlayerHealthController playerHealth;
+    private AudioManager audioPlayer;
 
     private float fireRate = .25f;
     private float fireCounter;
@@ -51,6 +54,7 @@ public class PlayerController : MonoBehaviour
         anim = GetComponent<Animator>();
         fireCounter = fireRate;
         playerHealth = PlayerHealthController.instance;
+        audioPlayer = AudioManager.instance;
 
         activeMoveSpeed = moveSpeed;
     }
@@ -93,6 +97,7 @@ public class PlayerController : MonoBehaviour
         {
             if (fireCounter <= 0)
             {
+                audioPlayer.PlaySFX(weaponSound);
                 Instantiate(bulletType, firePoint.position, firePoint.rotation);
                 fireCounter = fireRate;
             }
@@ -101,6 +106,7 @@ public class PlayerController : MonoBehaviour
         {
             if(fireCounter <= 0)
             {
+                audioPlayer.PlaySFX(weaponSound);
                 Instantiate(bulletType, firePoint.position, firePoint.rotation);
 
                 fireCounter = fireRate;
@@ -117,6 +123,7 @@ public class PlayerController : MonoBehaviour
                 activeMoveSpeed = dashSpeed;                
                 dashCounter = dashLenght;
                 anim.SetTrigger("dash");
+                audioPlayer.PlaySFX(dashSound);
             }            
         }
         if(dashCounter > 0)

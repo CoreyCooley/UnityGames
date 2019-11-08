@@ -8,17 +8,21 @@ public class EnemyBullet : MonoBehaviour
     public float speed = 7.5f;
     public int bulletDamage = 25;
     public GameObject impactEffect;
+    public int impactSound = 4;
     
     private Vector3 direction;
     private PlayerController player;
     private PlayerHealthController playerHealth;
+    private AudioManager audioPlayer;
 
     // Start is called before the first frame update
     void Start()
     {
         player = PlayerController.instance;
         playerHealth = PlayerHealthController.instance;
-        direction = player.transform.position - transform.position;
+        audioPlayer = AudioManager.instance;
+
+        direction = player.transform.position - transform.position;        
     }
 
     // Update is called once per frame
@@ -32,6 +36,7 @@ public class EnemyBullet : MonoBehaviour
     {
         Instantiate(impactEffect, transform.position, transform.rotation);
         Destroy(gameObject);
+        audioPlayer.PlaySFX(impactSound);
 
         if (other.tag == "Player")        
             playerHealth.DamagePlayer();

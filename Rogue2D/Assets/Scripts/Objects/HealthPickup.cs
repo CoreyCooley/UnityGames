@@ -6,7 +6,9 @@ public class HealthPickup : MonoBehaviour
 {
 
     public int healAmount = 1;
+    public int pickupSound = 7;
     private PlayerHealthController playerHealth;
+    private AudioManager audioPlayer;
 
     public float waitToBeCollected = 0.25f;
 
@@ -14,6 +16,7 @@ public class HealthPickup : MonoBehaviour
     void Start()
     {
         playerHealth = PlayerHealthController.instance;
+        audioPlayer = AudioManager.instance;
     }
 
     // Update is called once per frame
@@ -29,6 +32,8 @@ public class HealthPickup : MonoBehaviour
         {
             playerHealth.HealPlayer(healAmount);
             Destroy(gameObject);
+
+            audioPlayer.PlaySFX(pickupSound);
         }    
     }
 }

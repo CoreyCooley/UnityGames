@@ -13,10 +13,15 @@ public class Breakables : MonoBehaviour
     public GameObject[] itemDrops;
     public float itemDropRate;
 
+    public int breakSound = 0;
+
+    private AudioManager audioPlayer;
+
     // Start is called before the first frame update
     void Start()
     {
         player = PlayerController.instance;
+        audioPlayer = AudioManager.instance;
     }
 
     // Update is called once per frame
@@ -42,7 +47,6 @@ public class Breakables : MonoBehaviour
 
     private void OnTriggerStay2D(Collider2D other) 
     {
-        Debug.Log("Testing");
         if (other.tag == "Player")
         {
             if (player.dashCounter > 0)
@@ -65,8 +69,10 @@ public class Breakables : MonoBehaviour
             int randomPiece = Random.Range(0, brokenPieces.Length);
 
             Destroy(gameObject);
-            Instantiate(brokenPieces[randomPiece], transform.position, transform.rotation);
+            Instantiate(brokenPieces[randomPiece], transform.position, transform.rotation);            
         }
+
+        audioPlayer.PlaySFX(breakSound);
     }
 
     private void ItemDrop()

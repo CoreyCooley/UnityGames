@@ -19,9 +19,9 @@ TagManager:
   - Player Bullet
   - Enemy
   - Enemy Bullet
-  - Environment
-  - 
-  - 
+  - Breakable
+  - IgnoreBullets
+  - Pickups
   - 
   - 
   - 

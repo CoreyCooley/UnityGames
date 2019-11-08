@@ -10,6 +10,9 @@ public class EnemyController : MonoBehaviour
     public int health = 150;
     public GameObject[] deathSplatters;
     public GameObject hitEffect;
+    public int hitSound = 2;
+    public int deathSound = 1;
+    public int weaponSound = 13; 
     
     // Combat System
     public bool isMelee;
@@ -24,6 +27,7 @@ public class EnemyController : MonoBehaviour
     private GameObject target;
     private Animator anim;
     private PlayerController player;
+    private AudioManager audioPlayer;
 
     // Start is called before the first frame update
     void Start()
@@ -31,6 +35,7 @@ public class EnemyController : MonoBehaviour
         enemyRb = GetComponent<Rigidbody2D>();
         anim = GetComponent<Animator>();
         player = PlayerController.instance;
+        audioPlayer = AudioManager.instance;
     }
 
     // Update is called once per frame
@@ -57,6 +62,7 @@ public class EnemyController : MonoBehaviour
 
                 if (attackCounter <= 0)
                 {
+                    audioPlayer.PlaySFX(weaponSound);
                     attackCounter = attackRate;
                     Instantiate(bullet, attackPoint.transform.position, attackPoint.transform.rotation);
                 }                
@@ -86,7 +92,7 @@ public class EnemyController : MonoBehaviour
     public void DamageEnemy(int damage)
     {
         health -= damage;
-
+        
         Instantiate(hitEffect, transform.position, transform.rotation);
 
         if(health <= 0)
@@ -98,6 +104,11 @@ public class EnemyController : MonoBehaviour
             // Rotation 0, 90, 180, 270
             int rotation = Random.Range(0,4);
             Instantiate(deathSplatters[index], transform.position, Quaternion.Euler(0f,0f, rotation * 90f));
+            audioPlayer.PlaySFX(deathSound);
+        }
+        else
+        {
+            audioPlayer.PlaySFX(hitSound);
         }
     }
 }

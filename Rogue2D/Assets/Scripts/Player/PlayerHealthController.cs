@@ -11,9 +11,12 @@ public class PlayerHealthController : MonoBehaviour
 
     public float invincibleLength = 1f;
     public float invincibleCounter;
+    public int hitSound = 11;
+    public int deathSound = 9;
 
     private PlayerController player;
     private UIController ui;
+    private AudioManager audioPlayer;
 
     private void Awake() 
     {
@@ -26,6 +29,7 @@ public class PlayerHealthController : MonoBehaviour
         currentHealth = maxHealth;
         player = PlayerController.instance;
         ui = UIController.instance;
+        audioPlayer = AudioManager.instance;
 
         ui.healthSlider.maxValue = maxHealth;
         ui.healthSlider.value = currentHealth;
@@ -55,22 +59,19 @@ public class PlayerHealthController : MonoBehaviour
             ui.healthSlider.value = currentHealth;
             ui.healthText.text = currentHealth + " / " + maxHealth;
             invincibleCounter = invincibleLength;
-
+            audioPlayer.PlaySFX(hitSound);
             player.bodySR.color = new Color(player.bodySR.color.r,player.bodySR.color.g,player.bodySR.color.b,0.5f);
         }
         
-
         if (currentHealth <= 0)
-        {
+        {            
             player.gameObject.SetActive(false);
 
             ui.deathScreen.SetActive(true);
 
-            // Get Random Splatter
-            //int index = Random.Range(0, deathSplatters.Length);
-            // Rotation 0, 90, 180, 270
-           // int rotation = Random.Range(0, 4);
-            //Instantiate(deathSplatters[index], transform.position, Quaternion.Euler(0f, 0f, rotation * 90f));
+            // Play death music
+            audioPlayer.PlayGameOver();
+            audioPlayer.PlaySFX(deathSound);
         }
         
     }
