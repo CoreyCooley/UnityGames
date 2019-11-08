@@ -19,7 +19,6 @@ public class EnemyBullet : MonoBehaviour
         player = PlayerController.instance;
         playerHealth = PlayerHealthController.instance;
         direction = player.transform.position - transform.position;
-
     }
 
     // Update is called once per frame

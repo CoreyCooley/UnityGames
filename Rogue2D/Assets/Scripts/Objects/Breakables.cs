@@ -9,6 +9,10 @@ public class Breakables : MonoBehaviour
     public GameObject[] brokenPieces;
     public int maxPieces;
 
+    public bool hasDrops;
+    public GameObject[] itemDrops;
+    public float itemDropRate;
+
     // Start is called before the first frame update
     void Start()
     {
@@ -27,13 +31,27 @@ public class Breakables : MonoBehaviour
         if(other.tag == "Player Bullet")
         {
             Break();
-        }
-        
-        if(other.tag == "Player")
-        {
-            if(player.dashCounter > 0)
+
+            if(hasDrops)
             {
-                Break();                
+                ItemDrop();
+            }
+        }
+
+    }
+
+    private void OnTriggerStay2D(Collider2D other) 
+    {
+        Debug.Log("Testing");
+        if (other.tag == "Player")
+        {
+            if (player.dashCounter > 0)
+            {
+                Break();
+                if (hasDrops)
+                {
+                    ItemDrop();
+                }
             }
         }
     }
@@ -48,6 +66,17 @@ public class Breakables : MonoBehaviour
 
             Destroy(gameObject);
             Instantiate(brokenPieces[randomPiece], transform.position, transform.rotation);
+        }
+    }
+
+    private void ItemDrop()
+    {
+        float dropChance = Random.Range(0f, 100f);
+
+        if(dropChance <= itemDropRate)
+        {
+            int rand = Random.Range(0, itemDrops.Length);
+            Instantiate(itemDrops[rand], transform.position, transform.rotation);
         }
     }
 }

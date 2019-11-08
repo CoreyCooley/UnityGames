@@ -81,4 +81,17 @@ public class PlayerHealthController : MonoBehaviour
 
         player.bodySR.color = new Color(player.bodySR.color.r, player.bodySR.color.g, player.bodySR.color.b, 0.5f);
     }
+
+    public void HealPlayer(int healAmount)
+    {        
+        currentHealth += healAmount;
+
+        if (currentHealth > maxHealth)
+        {
+            currentHealth = maxHealth;
+        }
+
+        ui.healthSlider.value = currentHealth;
+        ui.healthText.text = currentHealth + " / " + maxHealth;
+    }
 }
