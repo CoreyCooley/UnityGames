@@ -29,7 +29,6 @@ public class EnemyBullet : MonoBehaviour
     void Update()
     {
         transform.position += direction * speed * Time.deltaTime;
-        Debug.Log("Enemy Bullet: " + direction * speed * Time.deltaTime);
     }
 
     private void OnTriggerEnter2D(Collider2D other)
