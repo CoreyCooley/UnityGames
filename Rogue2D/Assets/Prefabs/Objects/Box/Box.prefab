@@ -109,7 +109,7 @@ MonoBehaviour:
   itemDrops:
   - {fileID: 4196402093663614566, guid: 1ce4896112256224fbc67dfefa32cdaf, type: 3}
   - {fileID: 3129389659563319678, guid: 04883ade39bbaad459103779a660f2c6, type: 3}
-  itemDropRate: 10
+  itemDropRate: 5
   breakSound: 0
 --- !u!61 &7587154618824433460
 BoxCollider2D:

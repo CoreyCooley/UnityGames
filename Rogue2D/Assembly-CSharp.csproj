@@ -49,11 +49,15 @@
      <Compile Include="Assets\Scripts\Camera\CameraController.cs" />
      <Compile Include="Assets\Scripts\Enemy\EnemyBullet.cs" />
      <Compile Include="Assets\Scripts\Enemy\EnemyController.cs" />
+     <Compile Include="Assets\Scripts\Level\LevelManager.cs" />
+     <Compile Include="Assets\Scripts\Level\MainMenu.cs" />
+     <Compile Include="Assets\Scripts\Level\VictoryScreen.cs" />
      <Compile Include="Assets\Scripts\Objects\Breakables.cs" />
      <Compile Include="Assets\Scripts\Objects\BrokenPiece.cs" />
      <Compile Include="Assets\Scripts\Objects\DamagePlayer.cs" />
      <Compile Include="Assets\Scripts\Objects\Door.cs" />
      <Compile Include="Assets\Scripts\Objects\HealthPickup.cs" />
+     <Compile Include="Assets\Scripts\Objects\LevelExit.cs" />
      <Compile Include="Assets\Scripts\Objects\SpriteSortOrder.cs" />
      <Compile Include="Assets\Scripts\Player\PlayerBullet.cs" />
      <Compile Include="Assets\Scripts\Player\PlayerController.cs" />
@@ -84,14 +88,14 @@
  <Reference Include="Unity.2D.Sprite.Editor">
  <HintPath>G:/GitHub/UnityGames/Rogue2D/Library/ScriptAssemblies/Unity.2D.Sprite.Editor.dll</HintPath>
  </Reference>
+ <Reference Include="Unity.2D.Tilemap.Editor">
+ <HintPath>G:/GitHub/UnityGames/Rogue2D/Library/ScriptAssemblies/Unity.2D.Tilemap.Editor.dll</HintPath>
+ </Reference>
  <Reference Include="Unity.TextMeshPro">
  <HintPath>G:/GitHub/UnityGames/Rogue2D/Library/ScriptAssemblies/Unity.TextMeshPro.dll</HintPath>
  </Reference>
  <Reference Include="UnityEditor.UI">
  <HintPath>G:/GitHub/UnityGames/Rogue2D/Library/ScriptAssemblies/UnityEditor.UI.dll</HintPath>
- </Reference>
- <Reference Include="Unity.2D.Tilemap.Editor">
- <HintPath>G:/GitHub/UnityGames/Rogue2D/Library/ScriptAssemblies/Unity.2D.Tilemap.Editor.dll</HintPath>
  </Reference>
  <Reference Include="UnityEngine">
  <HintPath>G:/Program Files/Unity/2019.2.11f1/Editor/Data/Managed/UnityEngine/UnityEngine.dll</HintPath>
