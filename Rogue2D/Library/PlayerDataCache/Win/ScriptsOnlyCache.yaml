@@ -2,21 +2,18 @@ ScriptsOnlyBuild:
   usedScripts:
     Assembly-CSharp.dll:
     - AudioManager
-    - Breakables
-    - BrokenPiece
     - CameraController
-    - DamagePlayer
     - EnemyBullet
     - EnemyController
-    - HealthPickup
     - LevelExit
+    - LevelGenerator
     - LevelManager
     - MainMenu
     - PlayerBullet
     - PlayerController
     - PlayerHealthController
     - Room
-    - SpriteSortOrder
+    - RoomCenter
     - UIController
     - VictoryScreen
     Unity.2D.Tilemap.Editor.dll:
@@ -32,10 +29,8 @@ ScriptsOnlyBuild:
     UnityEditor.Graphs.dll:
     - UnityEditor.Graphs.AnimationBlendTree.Graph
     - UnityEditor.Graphs.AnimationBlendTree.GraphGUI
-    - UnityEditor.Graphs.AnimationStateMachine.AnyStateNode
     - UnityEditor.Graphs.AnimationStateMachine.Graph
     - UnityEditor.Graphs.AnimationStateMachine.GraphGUI
-    - UnityEditor.Graphs.AnimationStateMachine.StateNode
     - UnityEditor.Graphs.AnimatorControllerTool
     UnityEditor.TestRunner.dll:
     - UnityEditor.TestTools.TestRunner.Api.CallbacksHolder
@@ -52,60 +47,7 @@ ScriptsOnlyBuild:
     - UnityEngine.UI.Slider
     - UnityEngine.UI.Text
   sceneClasses:
-    Assets/Scenes/MainMenu.unity:
-    - Class: 1
-      Script: {instanceID: 0}
-    - Class: 4
-      Script: {instanceID: 0}
-    - Class: 20
-      Script: {instanceID: 0}
-    - Class: 21
-      Script: {instanceID: 0}
-    - Class: 28
-      Script: {instanceID: 0}
-    - Class: 48
-      Script: {instanceID: 0}
-    - Class: 81
-      Script: {instanceID: 0}
-    - Class: 82
-      Script: {instanceID: 0}
-    - Class: 83
-      Script: {instanceID: 0}
-    - Class: 104
-      Script: {instanceID: 0}
-    - Class: 114
-      Script: {instanceID: 9676}
-    - Class: 114
-      Script: {instanceID: 9838}
-    - Class: 114
-      Script: {instanceID: 9880}
-    - Class: 114
-      Script: {instanceID: 10282}
-    - Class: 114
-      Script: {instanceID: 10660}
-    - Class: 114
-      Script: {instanceID: 11144}
-    - Class: 114
-      Script: {instanceID: 11464}
-    - Class: 114
-      Script: {instanceID: 11520}
-    - Class: 114
-      Script: {instanceID: 66038}
-    - Class: 115
-      Script: {instanceID: 0}
-    - Class: 128
-      Script: {instanceID: 0}
-    - Class: 157
-      Script: {instanceID: 0}
-    - Class: 213
-      Script: {instanceID: 0}
-    - Class: 222
-      Script: {instanceID: 0}
-    - Class: 223
-      Script: {instanceID: 0}
-    - Class: 224
-      Script: {instanceID: 0}
-    Assets/Scenes/Test.unity:
+    Assets/Scenes/LevelTest.unity:
     - Class: 1
       Script: {instanceID: 0}
     - Class: 4
@@ -147,53 +89,47 @@ ScriptsOnlyBuild:
     - Class: 114
       Script: {instanceID: 9676}
     - Class: 114
-      Script: {instanceID: 9838}
+      Script: {instanceID: 9842}
     - Class: 114
-      Script: {instanceID: 9870}
+      Script: {instanceID: 9884}
     - Class: 114
-      Script: {instanceID: 9880}
+      Script: {instanceID: 10156}
     - Class: 114
-      Script: {instanceID: 10028}
+      Script: {instanceID: 10220}
     - Class: 114
-      Script: {instanceID: 10214}
+      Script: {instanceID: 10288}
     - Class: 114
-      Script: {instanceID: 10282}
+      Script: {instanceID: 10304}
     - Class: 114
-      Script: {instanceID: 10346}
+      Script: {instanceID: 10468}
     - Class: 114
-      Script: {instanceID: 10460}
+      Script: {instanceID: 10534}
     - Class: 114
-      Script: {instanceID: 10510}
+      Script: {instanceID: 10668}
     - Class: 114
-      Script: {instanceID: 10526}
+      Script: {instanceID: 10814}
     - Class: 114
-      Script: {instanceID: 10660}
+      Script: {instanceID: 10886}
     - Class: 114
-      Script: {instanceID: 10806}
+      Script: {instanceID: 10916}
     - Class: 114
-      Script: {instanceID: 10878}
+      Script: {instanceID: 11040}
     - Class: 114
-      Script: {instanceID: 10908}
+      Script: {instanceID: 11152}
     - Class: 114
-      Script: {instanceID: 11032}
+      Script: {instanceID: 11294}
     - Class: 114
-      Script: {instanceID: 11144}
+      Script: {instanceID: 11334}
     - Class: 114
-      Script: {instanceID: 11286}
+      Script: {instanceID: 11472}
     - Class: 114
-      Script: {instanceID: 11306}
+      Script: {instanceID: 11528}
     - Class: 114
-      Script: {instanceID: 11326}
+      Script: {instanceID: 11562}
     - Class: 114
-      Script: {instanceID: 11464}
+      Script: {instanceID: 18640}
     - Class: 114
-      Script: {instanceID: 11520}
-    - Class: 114
-      Script: {instanceID: 11554}
-    - Class: 114
-      Script: {instanceID: 17736}
-    - Class: 114
-      Script: {instanceID: 21830}
+      Script: {instanceID: 38830}
     - Class: 115
       Script: {instanceID: 0}
     - Class: 128
@@ -222,6 +158,59 @@ ScriptsOnlyBuild:
       Script: {instanceID: 0}
     - Class: 1839735485
       Script: {instanceID: 0}
+    Assets/Scenes/MainMenu.unity:
+    - Class: 1
+      Script: {instanceID: 0}
+    - Class: 4
+      Script: {instanceID: 0}
+    - Class: 20
+      Script: {instanceID: 0}
+    - Class: 21
+      Script: {instanceID: 0}
+    - Class: 28
+      Script: {instanceID: 0}
+    - Class: 48
+      Script: {instanceID: 0}
+    - Class: 81
+      Script: {instanceID: 0}
+    - Class: 82
+      Script: {instanceID: 0}
+    - Class: 83
+      Script: {instanceID: 0}
+    - Class: 104
+      Script: {instanceID: 0}
+    - Class: 114
+      Script: {instanceID: 9676}
+    - Class: 114
+      Script: {instanceID: 9768}
+    - Class: 114
+      Script: {instanceID: 9842}
+    - Class: 114
+      Script: {instanceID: 9884}
+    - Class: 114
+      Script: {instanceID: 10288}
+    - Class: 114
+      Script: {instanceID: 10668}
+    - Class: 114
+      Script: {instanceID: 11152}
+    - Class: 114
+      Script: {instanceID: 11472}
+    - Class: 114
+      Script: {instanceID: 11528}
+    - Class: 115
+      Script: {instanceID: 0}
+    - Class: 128
+      Script: {instanceID: 0}
+    - Class: 157
+      Script: {instanceID: 0}
+    - Class: 213
+      Script: {instanceID: 0}
+    - Class: 222
+      Script: {instanceID: 0}
+    - Class: 223
+      Script: {instanceID: 0}
+    - Class: 224
+      Script: {instanceID: 0}
     Assets/Scenes/Victory.unity:
     - Class: 1
       Script: {instanceID: 0}
@@ -246,17 +235,17 @@ ScriptsOnlyBuild:
     - Class: 114
       Script: {instanceID: 9676}
     - Class: 114
-      Script: {instanceID: 9838}
+      Script: {instanceID: 9736}
     - Class: 114
-      Script: {instanceID: 10282}
+      Script: {instanceID: 9842}
     - Class: 114
-      Script: {instanceID: 11144}
+      Script: {instanceID: 10288}
     - Class: 114
-      Script: {instanceID: 11464}
+      Script: {instanceID: 11152}
     - Class: 114
-      Script: {instanceID: 11520}
+      Script: {instanceID: 11472}
     - Class: 114
-      Script: {instanceID: 66692}
+      Script: {instanceID: 11528}
     - Class: 115
       Script: {instanceID: 0}
     - Class: 128
@@ -300,6 +289,18 @@ ScriptsOnlyBuild:
     assemblyName: Unity.TextMeshPro.dll
     namespaceName: TMPro
     className: TMP_Dropdown
+  - hash:
+      serializedVersion: 2
+      Hash: 9cf2b890287e940d7534dae6f688c615
+    assemblyName: Assembly-CSharp.dll
+    namespaceName: 
+    className: VictoryScreen
+  - hash:
+      serializedVersion: 2
+      Hash: 9b19f224ede116eb678f10d01bd72a05
+    assemblyName: Assembly-CSharp.dll
+    namespaceName: 
+    className: MainMenu
   - hash:
       serializedVersion: 2
       Hash: e7a73f5f78ba6445195ec23b74a1ce2d
@@ -434,6 +435,12 @@ ScriptsOnlyBuild:
     className: AnimationPlayableAsset
   - hash:
       serializedVersion: 2
+      Hash: fdc2eebd076ca04a4d1d71ec755ea8fe
+    assemblyName: Assembly-CSharp.dll
+    namespaceName: 
+    className: LevelManager
+  - hash:
+      serializedVersion: 2
       Hash: aba7b2852ef61d175dd9602e7723d5e5
     assemblyName: UnityEngine.UI.dll
     namespaceName: UnityEngine.UI
@@ -456,6 +463,12 @@ ScriptsOnlyBuild:
     assemblyName: Unity.Timeline.dll
     namespaceName: UnityEngine.Timeline
     className: ControlPlayableAsset
+  - hash:
+      serializedVersion: 2
+      Hash: 9b19f224ede116eb678f10d01bd72a05
+    assemblyName: Assembly-CSharp.dll
+    namespaceName: 
+    className: LevelExit
   - hash:
       serializedVersion: 2
       Hash: b8a5e8091ab0b8861d2add371082c5e0
@@ -620,7 +633,7 @@ ScriptsOnlyBuild:
     className: TimelineAsset
   - hash:
       serializedVersion: 2
-      Hash: 5e0b58edaaac0ccbd108f44da6753643
+      Hash: fe51febfba817dc1eb8b0a0be9669ff3
     assemblyName: Assembly-CSharp.dll
     namespaceName: 
     className: Room
@@ -776,31 +789,19 @@ ScriptsOnlyBuild:
     className: PlayableTrack
   - hash:
       serializedVersion: 2
-      Hash: 9b19f224ede116eb678f10d01bd72a05
+      Hash: d909fd4ab74e17fb562407e1bc530895
     assemblyName: Assembly-CSharp.dll
     namespaceName: 
-    className: LevelExit
+    className: LevelGenerator
   - hash:
       serializedVersion: 2
-      Hash: fdc2eebd076ca04a4d1d71ec755ea8fe
+      Hash: 852900bf5c38c19ae4c69c9189e5cf05
     assemblyName: Assembly-CSharp.dll
     namespaceName: 
-    className: LevelManager
-  - hash:
-      serializedVersion: 2
-      Hash: 9b19f224ede116eb678f10d01bd72a05
-    assemblyName: Assembly-CSharp.dll
-    namespaceName: 
-    className: MainMenu
-  - hash:
-      serializedVersion: 2
-      Hash: 9cf2b890287e940d7534dae6f688c615
-    assemblyName: Assembly-CSharp.dll
-    namespaceName: 
-    className: VictoryScreen
+    className: RoomCenter
   platform: 5
   scenePathNames:
   - Assets/Scenes/MainMenu.unity
-  - Assets/Scenes/Test.unity
+  - Assets/Scenes/LevelTest.unity
   - Assets/Scenes/Victory.unity
   playerPath: G:/GitHub/Rogue2D/Dungeon Gunner.exe

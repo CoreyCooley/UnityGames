@@ -49,6 +49,7 @@
      <Compile Include="Assets\Scripts\Camera\CameraController.cs" />
      <Compile Include="Assets\Scripts\Enemy\EnemyBullet.cs" />
      <Compile Include="Assets\Scripts\Enemy\EnemyController.cs" />
+     <Compile Include="Assets\Scripts\Level\LevelGenerator.cs" />
      <Compile Include="Assets\Scripts\Level\LevelManager.cs" />
      <Compile Include="Assets\Scripts\Level\MainMenu.cs" />
      <Compile Include="Assets\Scripts\Level\VictoryScreen.cs" />
@@ -64,6 +65,8 @@
      <Compile Include="Assets\Scripts\Player\PlayerHealthController.cs" />
      <Compile Include="Assets\Scripts\Player\UIController.cs" />
      <Compile Include="Assets\Scripts\Room\Room.cs" />
+     <Compile Include="Assets\Scripts\Room\RoomCenter.cs" />
+     <Compile Include="Assets\Scripts\Room\RoomPrefabs.cs" />
  <Reference Include="Unity.Timeline.Editor">
  <HintPath>G:/GitHub/UnityGames/Rogue2D/Library/ScriptAssemblies/Unity.Timeline.Editor.dll</HintPath>
  </Reference>
