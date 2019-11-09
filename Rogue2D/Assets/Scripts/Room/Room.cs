@@ -6,54 +6,36 @@ public class Room : MonoBehaviour
 {
 
     public bool isLockedOnEnter;
-    public bool isLockedOnClear;
     private bool isActiveRoom;
 
     public GameObject[] doors;
 
-    public List<GameObject> enemies = new List<GameObject>();
-
     private CameraController gameCamera;
+
+    private void Awake() 
+    {
+        gameCamera = CameraController.instance;
+    }
 
     // Start is called before the first frame update
     void Start()
     {
-        gameCamera = CameraController.instance;
+        
     }
 
     // Update is called once per frame
     void Update()
     {
         
-        if (enemies.Count > 0 && isActiveRoom && !isLockedOnClear)
-        {
-            Debug.Log("Enemy Count: " + enemies.Count);
-
-            for(int i = 0; i < enemies.Count; i++)
-            {
-                if(enemies[i] == null)
-                {
-                    enemies.RemoveAt(i);
-                    i--;
-                }                    
-            }
-
-            if(enemies.Count == 0)
-            {
-                foreach (GameObject door in doors)
-                {
-                    Debug.Log("Enemy Count: " + enemies.Count);
-                    door.SetActive(false);
-                    isLockedOnEnter = false;
-                }
-            }
-        }
     }
 
     private void OnTriggerEnter2D(Collider2D other) 
     {
+
+        
         if(other.tag == "Player")
         {
+            Debug.Log("Player entered room");
             gameCamera.ChangeTarget(transform);
 
             if(isLockedOnEnter)
@@ -79,5 +61,20 @@ public class Room : MonoBehaviour
     {
         if(other.tag == "Player")
             isActiveRoom = false; 
+    }
+
+    public bool IsActiveRoom()
+    {
+        return isActiveRoom;
+    }
+
+    public void OpenDoors()
+    {        
+        foreach (GameObject door in doors)
+        {
+            Debug.Log("Opening Doors...");
+            door.SetActive(false);
+            isLockedOnEnter = false;
+        }
     }
 }
