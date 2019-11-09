@@ -35,7 +35,6 @@ public class Room : MonoBehaviour
         
         if(other.tag == "Player")
         {
-            Debug.Log("Player entered room");
             gameCamera.ChangeTarget(transform);
 
             if(isLockedOnEnter)
@@ -72,7 +71,6 @@ public class Room : MonoBehaviour
     {        
         foreach (GameObject door in doors)
         {
-            Debug.Log("Opening Doors...");
             door.SetActive(false);
             isLockedOnEnter = false;
         }

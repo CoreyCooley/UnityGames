@@ -1002,7 +1002,7 @@ MonoBehaviour:
   healthText: {fileID: 7954375332932093096}
   deathScreen: {fileID: 7954375332883384598}
   pauseMenu: {fileID: 4876679982348486830}
-  newGameScene: Test
+  newGameScene: LevelTest
   mainMenuScene: MainMenu
   fadeScreen: {fileID: 74561638}
   fadeSpeed: 2

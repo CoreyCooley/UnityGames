@@ -170,7 +170,7 @@ PrefabInstance:
     - target: {fileID: 4086231212566138115, guid: 3ca73dbed9901184cb086bd389970209,
         type: 3}
       propertyPath: m_RootOrder
-      value: 4
+      value: 2
       objectReference: {fileID: 0}
     - target: {fileID: 4086231212566138115, guid: 3ca73dbed9901184cb086bd389970209,
         type: 3}
@@ -187,6 +187,12 @@ PrefabInstance:
       propertyPath: m_LocalEulerAnglesHint.z
       value: 0
       objectReference: {fileID: 0}
+    - target: {fileID: 4086231212566138114, guid: 3ca73dbed9901184cb086bd389970209,
+        type: 3}
+      propertyPath: centerRooms.Array.data[7]
+      value: 
+      objectReference: {fileID: 4164025172908743810, guid: 88c06393a595db04391749463ae78eaf,
+        type: 3}
     m_RemovedComponents: []
   m_SourcePrefab: {fileID: 100100000, guid: 3ca73dbed9901184cb086bd389970209, type: 3}
 --- !u!1 &1198434692
@@ -337,7 +343,7 @@ PrefabInstance:
     - target: {fileID: 1510065659272806919, guid: ee474c9f51b26e8439c9db465ef7c250,
         type: 3}
       propertyPath: m_RootOrder
-      value: 2
+      value: 3
       objectReference: {fileID: 0}
     - target: {fileID: 1510065659272806919, guid: ee474c9f51b26e8439c9db465ef7c250,
         type: 3}
@@ -475,7 +481,7 @@ PrefabInstance:
     - target: {fileID: 7954375333415759099, guid: 309a5fbe760e5714bb391fb35903e772,
         type: 3}
       propertyPath: m_RootOrder
-      value: 3
+      value: 4
       objectReference: {fileID: 0}
     - target: {fileID: 7954375333415759099, guid: 309a5fbe760e5714bb391fb35903e772,
         type: 3}

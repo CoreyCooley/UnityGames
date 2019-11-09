@@ -2,9 +2,13 @@ ScriptsOnlyBuild:
   usedScripts:
     Assembly-CSharp.dll:
     - AudioManager
+    - Breakables
+    - BrokenPiece
     - CameraController
+    - DamagePlayer
     - EnemyBullet
     - EnemyController
+    - HealthPickup
     - LevelExit
     - LevelGenerator
     - LevelManager
@@ -14,6 +18,7 @@ ScriptsOnlyBuild:
     - PlayerHealthController
     - Room
     - RoomCenter
+    - SpriteSortOrder
     - UIController
     - VictoryScreen
     Unity.2D.Tilemap.Editor.dll:
@@ -29,8 +34,10 @@ ScriptsOnlyBuild:
     UnityEditor.Graphs.dll:
     - UnityEditor.Graphs.AnimationBlendTree.Graph
     - UnityEditor.Graphs.AnimationBlendTree.GraphGUI
+    - UnityEditor.Graphs.AnimationStateMachine.AnyStateNode
     - UnityEditor.Graphs.AnimationStateMachine.Graph
     - UnityEditor.Graphs.AnimationStateMachine.GraphGUI
+    - UnityEditor.Graphs.AnimationStateMachine.StateNode
     - UnityEditor.Graphs.AnimatorControllerTool
     UnityEditor.TestRunner.dll:
     - UnityEditor.TestTools.TestRunner.Api.CallbacksHolder
@@ -89,47 +96,57 @@ ScriptsOnlyBuild:
     - Class: 114
       Script: {instanceID: 9676}
     - Class: 114
-      Script: {instanceID: 9842}
+      Script: {instanceID: 9844}
     - Class: 114
-      Script: {instanceID: 9884}
+      Script: {instanceID: 9876}
     - Class: 114
-      Script: {instanceID: 10156}
+      Script: {instanceID: 9886}
     - Class: 114
-      Script: {instanceID: 10220}
+      Script: {instanceID: 10034}
     - Class: 114
-      Script: {instanceID: 10288}
+      Script: {instanceID: 10158}
     - Class: 114
-      Script: {instanceID: 10304}
+      Script: {instanceID: 10222}
     - Class: 114
-      Script: {instanceID: 10468}
+      Script: {instanceID: 10290}
     - Class: 114
-      Script: {instanceID: 10534}
+      Script: {instanceID: 10306}
     - Class: 114
-      Script: {instanceID: 10668}
+      Script: {instanceID: 10356}
     - Class: 114
-      Script: {instanceID: 10814}
+      Script: {instanceID: 10470}
     - Class: 114
-      Script: {instanceID: 10886}
+      Script: {instanceID: 10490}
     - Class: 114
-      Script: {instanceID: 10916}
+      Script: {instanceID: 10522}
     - Class: 114
-      Script: {instanceID: 11040}
+      Script: {instanceID: 10538}
     - Class: 114
-      Script: {instanceID: 11152}
+      Script: {instanceID: 10672}
     - Class: 114
-      Script: {instanceID: 11294}
+      Script: {instanceID: 10772}
     - Class: 114
-      Script: {instanceID: 11334}
+      Script: {instanceID: 10820}
     - Class: 114
-      Script: {instanceID: 11472}
+      Script: {instanceID: 10892}
     - Class: 114
-      Script: {instanceID: 11528}
+      Script: {instanceID: 10922}
     - Class: 114
-      Script: {instanceID: 11562}
+      Script: {instanceID: 11046}
     - Class: 114
-      Script: {instanceID: 18640}
+      Script: {instanceID: 11158}
     - Class: 114
-      Script: {instanceID: 38830}
+      Script: {instanceID: 11300}
+    - Class: 114
+      Script: {instanceID: 11320}
+    - Class: 114
+      Script: {instanceID: 11340}
+    - Class: 114
+      Script: {instanceID: 11478}
+    - Class: 114
+      Script: {instanceID: 11534}
+    - Class: 114
+      Script: {instanceID: 11568}
     - Class: 115
       Script: {instanceID: 0}
     - Class: 128
@@ -182,21 +199,21 @@ ScriptsOnlyBuild:
     - Class: 114
       Script: {instanceID: 9676}
     - Class: 114
-      Script: {instanceID: 9768}
+      Script: {instanceID: 9770}
     - Class: 114
-      Script: {instanceID: 9842}
+      Script: {instanceID: 9844}
     - Class: 114
-      Script: {instanceID: 9884}
+      Script: {instanceID: 9886}
     - Class: 114
-      Script: {instanceID: 10288}
+      Script: {instanceID: 10290}
     - Class: 114
-      Script: {instanceID: 10668}
+      Script: {instanceID: 10672}
     - Class: 114
-      Script: {instanceID: 11152}
+      Script: {instanceID: 11158}
     - Class: 114
-      Script: {instanceID: 11472}
+      Script: {instanceID: 11478}
     - Class: 114
-      Script: {instanceID: 11528}
+      Script: {instanceID: 11534}
     - Class: 115
       Script: {instanceID: 0}
     - Class: 128
@@ -237,15 +254,15 @@ ScriptsOnlyBuild:
     - Class: 114
       Script: {instanceID: 9736}
     - Class: 114
-      Script: {instanceID: 9842}
+      Script: {instanceID: 9844}
     - Class: 114
-      Script: {instanceID: 10288}
+      Script: {instanceID: 10290}
     - Class: 114
-      Script: {instanceID: 11152}
+      Script: {instanceID: 11158}
     - Class: 114
-      Script: {instanceID: 11472}
+      Script: {instanceID: 11478}
     - Class: 114
-      Script: {instanceID: 11528}
+      Script: {instanceID: 11534}
     - Class: 115
       Script: {instanceID: 0}
     - Class: 128
@@ -513,6 +530,12 @@ ScriptsOnlyBuild:
     className: ScrollRect
   - hash:
       serializedVersion: 2
+      Hash: 852900bf5c38c19ae4c69c9189e5cf05
+    assemblyName: Assembly-CSharp.dll
+    namespaceName: 
+    className: RoomCenter
+  - hash:
+      serializedVersion: 2
       Hash: c3d3430df9e3ea95e3e3d587961390fb
     assemblyName: Unity.Timeline.dll
     namespaceName: UnityEngine.Timeline
@@ -525,7 +548,7 @@ ScriptsOnlyBuild:
     className: BrokenPiece
   - hash:
       serializedVersion: 2
-      Hash: a270140d7e65a1a3cf2b4f00f4b54eea
+      Hash: fefdb5fac365ec58863ba74843c2dae7
     assemblyName: Assembly-CSharp.dll
     namespaceName: 
     className: EnemyController
@@ -565,6 +588,12 @@ ScriptsOnlyBuild:
     assemblyName: UnityEngine.UI.dll
     namespaceName: UnityEngine.UI
     className: VerticalLayoutGroup
+  - hash:
+      serializedVersion: 2
+      Hash: d909fd4ab74e17fb562407e1bc530895
+    assemblyName: Assembly-CSharp.dll
+    namespaceName: 
+    className: LevelGenerator
   - hash:
       serializedVersion: 2
       Hash: c72befc8bda05203736078feba74c7c7
@@ -789,16 +818,10 @@ ScriptsOnlyBuild:
     className: PlayableTrack
   - hash:
       serializedVersion: 2
-      Hash: d909fd4ab74e17fb562407e1bc530895
+      Hash: 71bb6a6b6c8f052f948db64c7dd3ca4f
     assemblyName: Assembly-CSharp.dll
     namespaceName: 
-    className: LevelGenerator
-  - hash:
-      serializedVersion: 2
-      Hash: 852900bf5c38c19ae4c69c9189e5cf05
-    assemblyName: Assembly-CSharp.dll
-    namespaceName: 
-    className: RoomCenter
+    className: IMoveable
   platform: 5
   scenePathNames:
   - Assets/Scenes/MainMenu.unity

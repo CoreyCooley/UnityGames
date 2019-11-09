@@ -21,18 +21,8 @@ public class RoomCenter : MonoBehaviour
     // Update is called once per frame
     void Update()
     {
-        if(room.IsActiveRoom())
-        {
-            Debug.Log("In RoomCenter script Update");
-            Debug.Log("Enemy Count: " + enemies.Count);
-            Debug.Log("Is room active " + room.IsActiveRoom());
-            Debug.Log("Is room unlocked on clear" + isUnlockedOnClear);
-        }
-
         if (enemies.Count > 0 && room.IsActiveRoom() && isUnlockedOnClear)
         {
-            Debug.Log("Enemy Count: " + enemies.Count);
-
             for (int i = 0; i < enemies.Count; i++)
             {
                 if (enemies[i] == null)
