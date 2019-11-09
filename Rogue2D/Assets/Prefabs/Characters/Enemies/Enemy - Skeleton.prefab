@@ -233,6 +233,10 @@ MonoBehaviour:
   attackPoint: {fileID: 6188741133971122938}
   attackRate: 1
   attackRange: 5
+  hasDrops: 1
+  itemDrops:
+  - {fileID: 5235944437541812573, guid: 9a3c8e06727cb4a4886cc0603da75e6f, type: 3}
+  itemDropRate: 15
 --- !u!95 &6503242773047286659
 Animator:
   serializedVersion: 3

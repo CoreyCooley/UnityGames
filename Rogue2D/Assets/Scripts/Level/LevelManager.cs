@@ -13,6 +13,9 @@ public class LevelManager : MonoBehaviour
     public string nextLevel;
 
     public bool isPaused = false;
+
+    public int currentCoins;
+
     private AudioManager audioPlayer;
     private PlayerController player;
     private UIController ui;
@@ -28,6 +31,8 @@ public class LevelManager : MonoBehaviour
         audioPlayer = AudioManager.instance;   
         player = PlayerController.instance;
         ui = UIController.instance;
+
+        UpdateCoinHUD();
 
         Time.timeScale = 1f;
     }
@@ -73,5 +78,29 @@ public class LevelManager : MonoBehaviour
             // Start Game
             Time.timeScale = 1f;
         }
+    }
+
+    public int GetCoins(int amount)
+    {
+        return currentCoins;
+    }
+
+    public void IncreaseCoins(int amount)
+    {
+        currentCoins += amount;
+        UpdateCoinHUD();
+    }
+
+    public void SpendCoins(int amount)
+    {
+        currentCoins -= amount;
+
+        if(currentCoins < 0)
+            currentCoins = 0;
+        UpdateCoinHUD();
+    }
+    private void UpdateCoinHUD()
+    {
+        ui.coinText.text = currentCoins.ToString();
     }
 }

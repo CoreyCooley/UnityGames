@@ -12,6 +12,11 @@ public class HealthPickup : MonoBehaviour
 
     public float waitToBeCollected = 0.25f;
 
+    private void Awake()
+    {
+
+    }
+
     // Start is called before the first frame update
     void Start()
     {

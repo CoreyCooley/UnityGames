@@ -31,9 +31,7 @@ public class PlayerHealthController : MonoBehaviour
         ui = UIController.instance;
         audioPlayer = AudioManager.instance;
 
-        ui.healthSlider.maxValue = maxHealth;
-        ui.healthSlider.value = currentHealth;
-        ui.healthText.text = currentHealth + " / " + maxHealth;
+        UpdateHealthHUD();
     }
 
     // Update is called once per frame
@@ -56,8 +54,9 @@ public class PlayerHealthController : MonoBehaviour
         {
             Instantiate(player.hitEffect, player.transform.position, player.transform.rotation);
             currentHealth--;
-            ui.healthSlider.value = currentHealth;
-            ui.healthText.text = currentHealth + " / " + maxHealth;
+
+            UpdateHealthHUD();
+
             invincibleCounter = invincibleLength;
             audioPlayer.PlaySFX(hitSound);
             player.bodySR.color = new Color(player.bodySR.color.r,player.bodySR.color.g,player.bodySR.color.b,0.5f);
@@ -92,6 +91,19 @@ public class PlayerHealthController : MonoBehaviour
             currentHealth = maxHealth;
         }
 
+        UpdateHealthHUD();
+    }
+
+    public void IncreaseMaxHealth(int amount)
+    {
+        maxHealth += amount;
+        HealPlayer(maxHealth);
+        UpdateHealthHUD();
+    }
+
+    private void UpdateHealthHUD()
+    {
+        ui.healthSlider.maxValue = maxHealth;
         ui.healthSlider.value = currentHealth;
         ui.healthText.text = currentHealth + " / " + maxHealth;
     }

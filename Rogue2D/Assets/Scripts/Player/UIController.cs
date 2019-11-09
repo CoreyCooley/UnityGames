@@ -10,6 +10,7 @@ public class UIController : MonoBehaviour
 
     public Slider healthSlider;
     public Text healthText;
+    public Text coinText;
     public GameObject deathScreen;
     public GameObject pauseMenu;
     public string newGameScene;

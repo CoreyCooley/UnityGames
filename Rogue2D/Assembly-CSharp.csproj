@@ -56,6 +56,7 @@
      <Compile Include="Assets\Scripts\Level\VictoryScreen.cs" />
      <Compile Include="Assets\Scripts\Objects\Breakables.cs" />
      <Compile Include="Assets\Scripts\Objects\BrokenPiece.cs" />
+     <Compile Include="Assets\Scripts\Objects\CoinPickup.cs" />
      <Compile Include="Assets\Scripts\Objects\DamagePlayer.cs" />
      <Compile Include="Assets\Scripts\Objects\Door.cs" />
      <Compile Include="Assets\Scripts\Objects\HealthPickup.cs" />
@@ -68,6 +69,7 @@
      <Compile Include="Assets\Scripts\Room\Room.cs" />
      <Compile Include="Assets\Scripts\Room\RoomCenter.cs" />
      <Compile Include="Assets\Scripts\Room\RoomPrefabs.cs" />
+     <Compile Include="Assets\Scripts\Shop\ShopItem.cs" />
  <Reference Include="Unity.Timeline.Editor">
  <HintPath>G:/GitHub/UnityGames/Rogue2D/Library/ScriptAssemblies/Unity.Timeline.Editor.dll</HintPath>
  </Reference>

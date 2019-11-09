@@ -77,12 +77,17 @@ MonoBehaviour:
   layoutRoom: {fileID: 8174038921884683115, guid: cebbc00b244ac0d4294aef0133897e1e,
     type: 3}
   startRoom: {fileID: 0}
-  levelRooms: []
   endRoom: {fileID: 0}
+  levelRooms: []
   startColor: {r: 0.208, g: 0.8207547, b: 0.08517267, a: 1}
   endColor: {r: 0.94509804, g: 0.054901958, b: 0.07156741, a: 1}
   generatorPoint: {fileID: 4086231211878320437}
-  roomCount: 50
+  hasShop: 1
+  shopRoom: {fileID: 0}
+  centerShop: {fileID: 7539300406611078302, guid: 9d314791347597149a9794fb45c7bbd2,
+    type: 3}
+  shopColor: {r: 1, g: 0.910864, b: 0, a: 1}
+  roomCount: 25
   xOffset: 18
   yOffset: 10
   roomLayer:
@@ -131,7 +136,7 @@ MonoBehaviour:
   - {fileID: 4164025172908743810, guid: d182fdeb2ca71f14b85e0fcb61ebedfa, type: 3}
   - {fileID: 4164025172908743810, guid: 762954ce6530ffa48975f39ae40c0ab5, type: 3}
   - {fileID: 4164025172908743810, guid: 59b77243904ae304786ab2b1e940db9e, type: 3}
-  - {fileID: 4164025172908743810, guid: 59b77243904ae304786ab2b1e940db9e, type: 3}
   - {fileID: 4164025172908743810, guid: 88c06393a595db04391749463ae78eaf, type: 3}
+  - {fileID: 4164025172908743810, guid: f5d95aa5bfd0df143b81888aba249f27, type: 3}
   centerEnd: {fileID: 5200961472267679338, guid: 92540251ebdc33445ab320b0ee13bdf8,
     type: 3}

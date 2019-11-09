@@ -53,6 +53,12 @@ public class EnemyController : MonoBehaviour
     public float attackRate = 1f;
     public float attackRange = 3f;
     private float attackCounter;
+
+    // Drop Items
+    [Header("Drops")]
+    public bool hasDrops;
+    public GameObject[] itemDrops;
+    public float itemDropRate;
     
     private Vector3 moveDirection;
     private GameObject target;
@@ -183,6 +189,7 @@ public class EnemyController : MonoBehaviour
         if(health <= 0)
         {
             Destroy(gameObject);
+            ItemDrop();
             
             // Get Random Splatter
             int index = Random.Range(0, deathSplatters.Length);
@@ -194,6 +201,17 @@ public class EnemyController : MonoBehaviour
         else
         {
             audioPlayer.PlaySFX(hitSound);
+        }
+    }
+
+    private void ItemDrop()
+    {
+        float dropChance = Random.Range(0f, 100f);
+
+        if (dropChance <= itemDropRate)
+        {
+            int rand = Random.Range(0, itemDrops.Length);
+            Instantiate(itemDrops[rand], transform.position, transform.rotation);
         }
     }
 }
