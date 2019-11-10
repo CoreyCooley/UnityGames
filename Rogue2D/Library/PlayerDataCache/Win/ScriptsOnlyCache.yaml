@@ -5,6 +5,7 @@ ScriptsOnlyBuild:
     - Breakables
     - BrokenPiece
     - CameraController
+    - CoinPickup
     - DamagePlayer
     - EnemyBullet
     - EnemyController
@@ -18,6 +19,7 @@ ScriptsOnlyBuild:
     - PlayerHealthController
     - Room
     - RoomCenter
+    - ShopItem
     - SpriteSortOrder
     - UIController
     - VictoryScreen
@@ -34,10 +36,8 @@ ScriptsOnlyBuild:
     UnityEditor.Graphs.dll:
     - UnityEditor.Graphs.AnimationBlendTree.Graph
     - UnityEditor.Graphs.AnimationBlendTree.GraphGUI
-    - UnityEditor.Graphs.AnimationStateMachine.AnyStateNode
     - UnityEditor.Graphs.AnimationStateMachine.Graph
     - UnityEditor.Graphs.AnimationStateMachine.GraphGUI
-    - UnityEditor.Graphs.AnimationStateMachine.StateNode
     - UnityEditor.Graphs.AnimatorControllerTool
     UnityEditor.TestRunner.dll:
     - UnityEditor.TestTools.TestRunner.Api.CallbacksHolder
@@ -50,6 +50,7 @@ ScriptsOnlyBuild:
     - UnityEngine.UI.GraphicRaycaster
     - UnityEngine.UI.Image
     - UnityEngine.UI.Outline
+    - UnityEngine.UI.RawImage
     - UnityEngine.UI.Shadow
     - UnityEngine.UI.Slider
     - UnityEngine.UI.Text
@@ -83,6 +84,8 @@ ScriptsOnlyBuild:
       Script: {instanceID: 0}
     - Class: 83
       Script: {instanceID: 0}
+    - Class: 84
+      Script: {instanceID: 0}
     - Class: 91
       Script: {instanceID: 0}
     - Class: 95
@@ -112,41 +115,47 @@ ScriptsOnlyBuild:
     - Class: 114
       Script: {instanceID: 10306}
     - Class: 114
-      Script: {instanceID: 10356}
+      Script: {instanceID: 10358}
     - Class: 114
-      Script: {instanceID: 10470}
+      Script: {instanceID: 10472}
     - Class: 114
-      Script: {instanceID: 10490}
+      Script: {instanceID: 10492}
     - Class: 114
-      Script: {instanceID: 10522}
+      Script: {instanceID: 10524}
     - Class: 114
-      Script: {instanceID: 10538}
+      Script: {instanceID: 10540}
     - Class: 114
-      Script: {instanceID: 10672}
+      Script: {instanceID: 10612}
     - Class: 114
-      Script: {instanceID: 10772}
+      Script: {instanceID: 10676}
     - Class: 114
-      Script: {instanceID: 10820}
+      Script: {instanceID: 10696}
     - Class: 114
-      Script: {instanceID: 10892}
+      Script: {instanceID: 10776}
     - Class: 114
-      Script: {instanceID: 10922}
+      Script: {instanceID: 10824}
     - Class: 114
-      Script: {instanceID: 11046}
+      Script: {instanceID: 10896}
     - Class: 114
-      Script: {instanceID: 11158}
+      Script: {instanceID: 10926}
     - Class: 114
-      Script: {instanceID: 11300}
+      Script: {instanceID: 11050}
     - Class: 114
-      Script: {instanceID: 11320}
+      Script: {instanceID: 11162}
     - Class: 114
-      Script: {instanceID: 11340}
+      Script: {instanceID: 11304}
     - Class: 114
-      Script: {instanceID: 11478}
+      Script: {instanceID: 11324}
     - Class: 114
-      Script: {instanceID: 11534}
+      Script: {instanceID: 11344}
     - Class: 114
-      Script: {instanceID: 11568}
+      Script: {instanceID: 11482}
+    - Class: 114
+      Script: {instanceID: 11538}
+    - Class: 114
+      Script: {instanceID: 11556}
+    - Class: 114
+      Script: {instanceID: 11574}
     - Class: 115
       Script: {instanceID: 0}
     - Class: 128
@@ -207,13 +216,13 @@ ScriptsOnlyBuild:
     - Class: 114
       Script: {instanceID: 10290}
     - Class: 114
-      Script: {instanceID: 10672}
+      Script: {instanceID: 10676}
     - Class: 114
-      Script: {instanceID: 11158}
+      Script: {instanceID: 11162}
     - Class: 114
-      Script: {instanceID: 11478}
+      Script: {instanceID: 11482}
     - Class: 114
-      Script: {instanceID: 11534}
+      Script: {instanceID: 11538}
     - Class: 115
       Script: {instanceID: 0}
     - Class: 128
@@ -258,11 +267,11 @@ ScriptsOnlyBuild:
     - Class: 114
       Script: {instanceID: 10290}
     - Class: 114
-      Script: {instanceID: 11158}
+      Script: {instanceID: 11162}
     - Class: 114
-      Script: {instanceID: 11478}
+      Script: {instanceID: 11482}
     - Class: 114
-      Script: {instanceID: 11534}
+      Script: {instanceID: 11538}
     - Class: 115
       Script: {instanceID: 0}
     - Class: 128
@@ -452,7 +461,7 @@ ScriptsOnlyBuild:
     className: AnimationPlayableAsset
   - hash:
       serializedVersion: 2
-      Hash: fdc2eebd076ca04a4d1d71ec755ea8fe
+      Hash: be2b5b4204383a146acc96171db78ed8
     assemblyName: Assembly-CSharp.dll
     namespaceName: 
     className: LevelManager
@@ -498,6 +507,12 @@ ScriptsOnlyBuild:
     assemblyName: Unity.Timeline.dll
     namespaceName: UnityEngine.Timeline
     className: ControlTrack
+  - hash:
+      serializedVersion: 2
+      Hash: 71bb6a6b6c8f052f948db64c7dd3ca4f
+    assemblyName: Assembly-CSharp.dll
+    namespaceName: 
+    className: IMoveable
   - hash:
       serializedVersion: 2
       Hash: 8dc90e648ac06f43bdd31ac9fa8f4579
@@ -548,7 +563,7 @@ ScriptsOnlyBuild:
     className: BrokenPiece
   - hash:
       serializedVersion: 2
-      Hash: fefdb5fac365ec58863ba74843c2dae7
+      Hash: ddee84eccc57cf7aea24b8c1749b9459
     assemblyName: Assembly-CSharp.dll
     namespaceName: 
     className: EnemyController
@@ -564,6 +579,12 @@ ScriptsOnlyBuild:
     assemblyName: UnityEngine.TestRunner.dll
     namespaceName: UnityEngine.TestTools.TestRunner.Callbacks
     className: RemoteTestResultSender
+  - hash:
+      serializedVersion: 2
+      Hash: fe85986014c89690d4620ceff5d9e248
+    assemblyName: Assembly-CSharp.dll
+    namespaceName: 
+    className: CoinPickup
   - hash:
       serializedVersion: 2
       Hash: 4fd8bf02e3089425d3502e26c44ba31a
@@ -590,13 +611,13 @@ ScriptsOnlyBuild:
     className: VerticalLayoutGroup
   - hash:
       serializedVersion: 2
-      Hash: d909fd4ab74e17fb562407e1bc530895
+      Hash: 45490cb2a258eb619bf7e3063ffd6d3a
     assemblyName: Assembly-CSharp.dll
     namespaceName: 
     className: LevelGenerator
   - hash:
       serializedVersion: 2
-      Hash: c72befc8bda05203736078feba74c7c7
+      Hash: a772622b8e16b165bd6e4e9564412f99
     assemblyName: Assembly-CSharp.dll
     namespaceName: 
     className: UIController
@@ -662,7 +683,7 @@ ScriptsOnlyBuild:
     className: TimelineAsset
   - hash:
       serializedVersion: 2
-      Hash: fe51febfba817dc1eb8b0a0be9669ff3
+      Hash: c318eb7b1cdb89132e8a33d9843df3a6
     assemblyName: Assembly-CSharp.dll
     namespaceName: 
     className: Room
@@ -794,6 +815,12 @@ ScriptsOnlyBuild:
     className: Toggle
   - hash:
       serializedVersion: 2
+      Hash: 247d60abfcd11096b82ad58177a8e06a
+    assemblyName: Assembly-CSharp.dll
+    namespaceName: 
+    className: ShopItem
+  - hash:
+      serializedVersion: 2
       Hash: 8220b46879dc5e37db1b940c938f5744
     assemblyName: Unity.Timeline.dll
     namespaceName: UnityEngine.Timeline
@@ -821,7 +848,7 @@ ScriptsOnlyBuild:
       Hash: 71bb6a6b6c8f052f948db64c7dd3ca4f
     assemblyName: Assembly-CSharp.dll
     namespaceName: 
-    className: IMoveable
+    className: MiniMap
   platform: 5
   scenePathNames:
   - Assets/Scenes/MainMenu.unity

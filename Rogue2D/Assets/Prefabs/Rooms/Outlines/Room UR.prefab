@@ -814,6 +814,86 @@ Transform:
   m_Father: {fileID: 8640172734872117756}
   m_RootOrder: 2
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
+--- !u!1 &7075849395780246182
+GameObject:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  serializedVersion: 6
+  m_Component:
+  - component: {fileID: 4643038561138847861}
+  - component: {fileID: 4819018318285378736}
+  m_Layer: 16
+  m_Name: Map_Hider
+  m_TagString: Untagged
+  m_Icon: {fileID: 0}
+  m_NavMeshLayer: 0
+  m_StaticEditorFlags: 0
+  m_IsActive: 1
+--- !u!4 &4643038561138847861
+Transform:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 7075849395780246182}
+  m_LocalRotation: {x: 0, y: 0, z: 0, w: 1}
+  m_LocalPosition: {x: 0, y: 0, z: 0}
+  m_LocalScale: {x: 1, y: 1, z: 1}
+  m_Children: []
+  m_Father: {fileID: 8640172734872117756}
+  m_RootOrder: 6
+  m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
+--- !u!212 &4819018318285378736
+SpriteRenderer:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 7075849395780246182}
+  m_Enabled: 1
+  m_CastShadows: 0
+  m_ReceiveShadows: 0
+  m_DynamicOccludee: 1
+  m_MotionVectors: 1
+  m_LightProbeUsage: 1
+  m_ReflectionProbeUsage: 1
+  m_RenderingLayerMask: 1
+  m_RendererPriority: 0
+  m_Materials:
+  - {fileID: 10754, guid: 0000000000000000f000000000000000, type: 0}
+  m_StaticBatchInfo:
+    firstSubMesh: 0
+    subMeshCount: 0
+  m_StaticBatchRoot: {fileID: 0}
+  m_ProbeAnchor: {fileID: 0}
+  m_LightProbeVolumeOverride: {fileID: 0}
+  m_ScaleInLightmap: 1
+  m_ReceiveGI: 1
+  m_PreserveUVs: 0
+  m_IgnoreNormalsForChartDetection: 0
+  m_ImportantGI: 0
+  m_StitchLightmapSeams: 1
+  m_SelectedEditorRenderState: 0
+  m_MinimumChartSize: 4
+  m_AutoUVMaxDistance: 0.5
+  m_AutoUVMaxAngle: 89
+  m_LightmapParameters: {fileID: 0}
+  m_SortingLayerID: 126773201
+  m_SortingLayer: 6
+  m_SortingOrder: 0
+  m_Sprite: {fileID: 21300000, guid: 4988e06030e3b9d428020ff5dd27aaa8, type: 3}
+  m_Color: {r: 1, g: 1, b: 1, a: 1}
+  m_FlipX: 0
+  m_FlipY: 0
+  m_DrawMode: 0
+  m_Size: {x: 18, y: 10}
+  m_AdaptiveModeThreshold: 0.5
+  m_SpriteTileMode: 0
+  m_WasSpriteAssigned: 1
+  m_MaskInteraction: 0
+  m_SpriteSortPoint: 0
 --- !u!1 &8640172734282205203
 GameObject:
   m_ObjectHideFlags: 0
@@ -881,6 +961,7 @@ Transform:
   - {fileID: 8640172736010352299}
   - {fileID: 8640172734282205202}
   - {fileID: 4622709814529373001}
+  - {fileID: 4643038561138847861}
   m_Father: {fileID: 0}
   m_RootOrder: 0
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
@@ -900,6 +981,7 @@ MonoBehaviour:
   doors:
   - {fileID: 8648557560086003410}
   - {fileID: 4127262268755635353}
+  mapHider: {fileID: 7075849395780246182}
 --- !u!50 &8640172734872117758
 Rigidbody2D:
   serializedVersion: 4
@@ -961,7 +1043,7 @@ GameObject:
   m_Component:
   - component: {fileID: 8640172735689644618}
   - component: {fileID: 8640172735689644617}
-  m_Layer: 15
+  m_Layer: 16
   m_Name: Room Outline
   m_TagString: Untagged
   m_Icon: {fileID: 0}
@@ -1156,6 +1238,16 @@ PrefabInstance:
   m_Modification:
     m_TransformParent: {fileID: 8238929003513631341}
     m_Modifications:
+    - target: {fileID: 3788818282559847488, guid: d0cb5df3043c37943a19cfc0265c1946,
+        type: 3}
+      propertyPath: m_Name
+      value: Door Horizontal
+      objectReference: {fileID: 0}
+    - target: {fileID: 3788818282559847488, guid: d0cb5df3043c37943a19cfc0265c1946,
+        type: 3}
+      propertyPath: m_IsActive
+      value: 0
+      objectReference: {fileID: 0}
     - target: {fileID: 527697569036170495, guid: d0cb5df3043c37943a19cfc0265c1946,
         type: 3}
       propertyPath: m_LocalPosition.x
@@ -1209,16 +1301,6 @@ PrefabInstance:
     - target: {fileID: 527697569036170495, guid: d0cb5df3043c37943a19cfc0265c1946,
         type: 3}
       propertyPath: m_LocalEulerAnglesHint.z
-      value: 0
-      objectReference: {fileID: 0}
-    - target: {fileID: 3788818282559847488, guid: d0cb5df3043c37943a19cfc0265c1946,
-        type: 3}
-      propertyPath: m_Name
-      value: Door Horizontal
-      objectReference: {fileID: 0}
-    - target: {fileID: 3788818282559847488, guid: d0cb5df3043c37943a19cfc0265c1946,
-        type: 3}
-      propertyPath: m_IsActive
       value: 0
       objectReference: {fileID: 0}
     m_RemovedComponents: []

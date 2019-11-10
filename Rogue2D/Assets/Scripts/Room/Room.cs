@@ -9,6 +9,7 @@ public class Room : MonoBehaviour
     private bool isActiveRoom;
 
     public GameObject[] doors;
+    public GameObject mapHider;
 
     private CameraController gameCamera;
 
@@ -46,6 +47,7 @@ public class Room : MonoBehaviour
             }
 
             isActiveRoom = true;
+            mapHider.SetActive(false);
         }    
     }
 

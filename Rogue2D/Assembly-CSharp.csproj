@@ -54,6 +54,7 @@
      <Compile Include="Assets\Scripts\Level\LevelManager.cs" />
      <Compile Include="Assets\Scripts\Level\MainMenu.cs" />
      <Compile Include="Assets\Scripts\Level\VictoryScreen.cs" />
+     <Compile Include="Assets\Scripts\Map\MiniMap.cs" />
      <Compile Include="Assets\Scripts\Objects\Breakables.cs" />
      <Compile Include="Assets\Scripts\Objects\BrokenPiece.cs" />
      <Compile Include="Assets\Scripts\Objects\CoinPickup.cs" />

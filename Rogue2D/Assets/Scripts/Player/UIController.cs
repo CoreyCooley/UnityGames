@@ -13,6 +13,8 @@ public class UIController : MonoBehaviour
     public Text coinText;
     public GameObject deathScreen;
     public GameObject pauseMenu;
+    public GameObject map;
+    public GameObject miniMap;
     public string newGameScene;
     public string mainMenuScene;
 

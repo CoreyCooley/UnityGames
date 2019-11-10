@@ -13,6 +13,7 @@ public class LevelManager : MonoBehaviour
     public string nextLevel;
 
     public bool isPaused = false;
+    public bool hasMapUp = false;
 
     public int currentCoins;
 
@@ -43,6 +44,12 @@ public class LevelManager : MonoBehaviour
         if(Input.GetKeyDown(KeyCode.Escape))
         {
             PauseUnpause();
+        }
+
+        if (Input.GetKeyDown(KeyCode.Tab))
+        {
+            ShowHideMap();
+            ShowHideMiniMap();
         }
     }
 
@@ -77,6 +84,31 @@ public class LevelManager : MonoBehaviour
 
             // Start Game
             Time.timeScale = 1f;
+        }
+    }
+
+    public void ShowHideMap()
+    {
+        if (!hasMapUp && !isPaused)
+        {
+            ui.map.SetActive(true);
+            hasMapUp = true;
+        }
+        else
+        {
+            ui.map.SetActive(false);
+            hasMapUp = false;
+        }
+    }
+    public void ShowHideMiniMap()
+    {
+        if (hasMapUp)
+        {
+            ui.miniMap.SetActive(false);
+        }
+        else
+        {
+            ui.miniMap.SetActive(true);
         }
     }
 
