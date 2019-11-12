@@ -10,14 +10,13 @@ public class PlayerController : MonoBehaviour
     private float activeMoveSpeed;
 
     public Transform gunArm;
-    public GameObject bulletType;
-    public Transform firePoint;
+
     public int health = 150;
     public GameObject[] deathSplatters;
     public GameObject hitEffect;
+
     public SpriteRenderer bodySR;
     public int dashSound = 8;
-    public int weaponSound = 12;
 
     private Animator anim;
     private Vector2 moveInput;
@@ -26,22 +25,27 @@ public class PlayerController : MonoBehaviour
     private PlayerHealthController playerHealth;
     private AudioManager audioPlayer;
     private LevelManager levelManager;
-
-    private float fireRate = .25f;
-    private float fireCounter;
     
     // Dashing
+    [Header("Dashing")]
     public float dashSpeed = 8f;
-    public float dashLenght = .5f;
+    public float dashLength = .5f;
     public float dashCooldown = 1f;
-    public float dashInvincibility = 1.5f;
+    public float dashInvincibility = 1.5f;    
     [HideInInspector]
     public float dashCounter;
     private float dashCoolCounter;
 
     [HideInInspector]
     public bool isMovable = true;
-    
+
+    [Header("Weapons")]
+    public List<Gun> weapons = new List<Gun>();
+    private int pistolSlot = 0;
+    private int shotgunSlot = 1;
+    private int ar15Slot = 2;
+    private int revolverSlot = 3;
+    private int currentWeapon;
     
     // Starts before start
     // This means you only have 1 player in a game
@@ -56,7 +60,6 @@ public class PlayerController : MonoBehaviour
         playerRb = GetComponent<Rigidbody2D>();
         playerCam = Camera.main;
         anim = GetComponent<Animator>();
-        fireCounter = fireRate;
         playerHealth = PlayerHealthController.instance;
         audioPlayer = AudioManager.instance;
         levelManager = LevelManager.instance;
@@ -95,30 +98,43 @@ public class PlayerController : MonoBehaviour
             float angle = Mathf.Atan2(offset.y, offset.x) * Mathf.Rad2Deg;
             gunArm.rotation = Quaternion.Euler(0, 0, angle);
 
-            // Fire Bullet
-            // 0 - Left Mouse Button
-            // 1 - Right Mouse Button
-            // 2 - Center Mouse Button
-            fireCounter -= Time.deltaTime;
-            if(Input.GetMouseButtonDown(0))
+            // Gun Pick
+            if (Input.GetKeyDown(KeyCode.F))
             {
-                if (fireCounter <= 0)
+                if (weapons.Count > 0)
                 {
-                    audioPlayer.PlaySFX(weaponSound);
-                    Instantiate(bulletType, firePoint.position, firePoint.rotation);
-                    fireCounter = fireRate;
+                    currentWeapon++;
+                    if(currentWeapon >= weapons.Count)
+                    {
+                        currentWeapon = 0;
+                    }
+                    SwitchWeapon(currentWeapon);
+                }
+                else
+                {
+                    Debug.Log("Player has no guns");
                 }
             }
-            if(Input.GetMouseButton(0))
+
+            // Gun switch pistol
+            if(Input.GetKeyDown(KeyCode.Alpha1))
             {
-                if(fireCounter <= 0)
-                {
-                    audioPlayer.PlaySFX(weaponSound);
-                    Instantiate(bulletType, firePoint.position, firePoint.rotation);
-
-                    fireCounter = fireRate;
-                }
-
+                SwitchWeapon(pistolSlot);
+            }
+            // Gun switch shotgun
+            if (Input.GetKeyDown(KeyCode.Alpha2))
+            {
+                SwitchWeapon(shotgunSlot);
+            }
+            // Gun switch AR-15
+            if (Input.GetKeyDown(KeyCode.Alpha3))
+            {
+                SwitchWeapon(ar15Slot);
+            }
+            // Gun switch revolver
+            if (Input.GetKeyDown(KeyCode.Alpha4))
+            {
+                SwitchWeapon(revolverSlot);
             }
 
             // Dash
@@ -128,7 +144,7 @@ public class PlayerController : MonoBehaviour
                 {
                     playerHealth.MakeInvincible(dashInvincibility);
                     activeMoveSpeed = dashSpeed;                
-                    dashCounter = dashLenght;
+                    dashCounter = dashLength;
                     anim.SetTrigger("dash");
                     audioPlayer.PlaySFX(dashSound);
                 }            
@@ -162,5 +178,14 @@ public class PlayerController : MonoBehaviour
             playerRb.velocity = Vector2.zero;
             anim.SetBool("isMoving", false);
         }
+    }
+
+    public void SwitchWeapon(int slot)
+    {
+        foreach(Gun gun in weapons)
+        {
+            gun.gameObject.SetActive(false);
+        }
+        weapons[slot].gameObject.SetActive(true);
     }
 }

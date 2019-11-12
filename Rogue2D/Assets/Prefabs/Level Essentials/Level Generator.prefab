@@ -87,7 +87,7 @@ MonoBehaviour:
   centerShop: {fileID: 7539300406611078302, guid: 9d314791347597149a9794fb45c7bbd2,
     type: 3}
   shopColor: {r: 1, g: 0.910864, b: 0, a: 1}
-  roomCount: 25
+  roomCount: 10
   xOffset: 18
   yOffset: 10
   roomLayer:

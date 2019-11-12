@@ -9,6 +9,7 @@ ScriptsOnlyBuild:
     - DamagePlayer
     - EnemyBullet
     - EnemyController
+    - Gun
     - HealthPickup
     - LevelExit
     - LevelGenerator
@@ -139,23 +140,25 @@ ScriptsOnlyBuild:
     - Class: 114
       Script: {instanceID: 10926}
     - Class: 114
-      Script: {instanceID: 11050}
+      Script: {instanceID: 11052}
     - Class: 114
-      Script: {instanceID: 11162}
+      Script: {instanceID: 11164}
     - Class: 114
-      Script: {instanceID: 11304}
+      Script: {instanceID: 11306}
     - Class: 114
-      Script: {instanceID: 11324}
+      Script: {instanceID: 11326}
     - Class: 114
-      Script: {instanceID: 11344}
+      Script: {instanceID: 11346}
     - Class: 114
-      Script: {instanceID: 11482}
+      Script: {instanceID: 11484}
     - Class: 114
-      Script: {instanceID: 11538}
+      Script: {instanceID: 11540}
     - Class: 114
-      Script: {instanceID: 11556}
+      Script: {instanceID: 11558}
     - Class: 114
-      Script: {instanceID: 11574}
+      Script: {instanceID: 11576}
+    - Class: 114
+      Script: {instanceID: 28694}
     - Class: 115
       Script: {instanceID: 0}
     - Class: 128
@@ -218,11 +221,11 @@ ScriptsOnlyBuild:
     - Class: 114
       Script: {instanceID: 10676}
     - Class: 114
-      Script: {instanceID: 11162}
+      Script: {instanceID: 11164}
     - Class: 114
-      Script: {instanceID: 11482}
+      Script: {instanceID: 11484}
     - Class: 114
-      Script: {instanceID: 11538}
+      Script: {instanceID: 11540}
     - Class: 115
       Script: {instanceID: 0}
     - Class: 128
@@ -267,11 +270,11 @@ ScriptsOnlyBuild:
     - Class: 114
       Script: {instanceID: 10290}
     - Class: 114
-      Script: {instanceID: 11162}
+      Script: {instanceID: 11164}
     - Class: 114
-      Script: {instanceID: 11482}
+      Script: {instanceID: 11484}
     - Class: 114
-      Script: {instanceID: 11538}
+      Script: {instanceID: 11540}
     - Class: 115
       Script: {instanceID: 0}
     - Class: 128
@@ -683,6 +686,12 @@ ScriptsOnlyBuild:
     className: TimelineAsset
   - hash:
       serializedVersion: 2
+      Hash: 71bb6a6b6c8f052f948db64c7dd3ca4f
+    assemblyName: Assembly-CSharp.dll
+    namespaceName: 
+    className: MiniMap
+  - hash:
+      serializedVersion: 2
       Hash: c318eb7b1cdb89132e8a33d9843df3a6
     assemblyName: Assembly-CSharp.dll
     namespaceName: 
@@ -719,7 +728,7 @@ ScriptsOnlyBuild:
     className: BeforeAfterTestCommandState
   - hash:
       serializedVersion: 2
-      Hash: 935ae74b876f67b840deec4fd85d0d76
+      Hash: 67bf91af788bb0c5dcbe6ef1eb9d4d37
     assemblyName: Assembly-CSharp.dll
     namespaceName: 
     className: PlayerController
@@ -845,10 +854,10 @@ ScriptsOnlyBuild:
     className: PlayableTrack
   - hash:
       serializedVersion: 2
-      Hash: 71bb6a6b6c8f052f948db64c7dd3ca4f
+      Hash: b3b6c24f140cddd611262849f2f27074
     assemblyName: Assembly-CSharp.dll
     namespaceName: 
-    className: MiniMap
+    className: Gun
   platform: 5
   scenePathNames:
   - Assets/Scenes/MainMenu.unity
