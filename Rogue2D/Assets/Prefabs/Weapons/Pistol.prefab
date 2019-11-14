@@ -131,3 +131,5 @@ MonoBehaviour:
   - {fileID: 9151249502026618362}
   fireRate: 0.55
   weaponSound: 12
+  weaponName: Pistol
+  weaponUI: {fileID: 262978286505467586, guid: f72804754a2106a4884d758772ef2a02, type: 3}

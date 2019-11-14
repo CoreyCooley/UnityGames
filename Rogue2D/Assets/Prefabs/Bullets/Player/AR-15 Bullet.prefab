@@ -12,6 +12,33 @@ PrefabInstance:
       propertyPath: m_Name
       value: AR-15 Bullet
       objectReference: {fileID: 0}
+    - target: {fileID: 7791580053177836424, guid: 134b8e96e7fd13d459ea265243fc956b,
+        type: 3}
+      propertyPath: m_Sprite
+      value: 
+      objectReference: {fileID: 3136152300603956720, guid: 56faa61c0738e9b43b0b5aa082c87bb1,
+        type: 3}
+    - target: {fileID: 7791580053177836424, guid: 134b8e96e7fd13d459ea265243fc956b,
+        type: 3}
+      propertyPath: m_WasSpriteAssigned
+      value: 1
+      objectReference: {fileID: 0}
+    - target: {fileID: 4145173120867012550, guid: 134b8e96e7fd13d459ea265243fc956b,
+        type: 3}
+      propertyPath: bulletDamage
+      value: 35
+      objectReference: {fileID: 0}
+    - target: {fileID: 4145173120867012550, guid: 134b8e96e7fd13d459ea265243fc956b,
+        type: 3}
+      propertyPath: speed
+      value: 8
+      objectReference: {fileID: 0}
+    - target: {fileID: 4145173120867012550, guid: 134b8e96e7fd13d459ea265243fc956b,
+        type: 3}
+      propertyPath: impactEffect
+      value: 
+      objectReference: {fileID: 2589357275703743168, guid: 8881bbea84657694db6700ed2a6dc762,
+        type: 3}
     - target: {fileID: 4145173120867012551, guid: 134b8e96e7fd13d459ea265243fc956b,
         type: 3}
       propertyPath: m_LocalPosition.x
@@ -66,27 +93,6 @@ PrefabInstance:
         type: 3}
       propertyPath: m_LocalEulerAnglesHint.z
       value: 0
-      objectReference: {fileID: 0}
-    - target: {fileID: 4145173120867012550, guid: 134b8e96e7fd13d459ea265243fc956b,
-        type: 3}
-      propertyPath: bulletDamage
-      value: 35
-      objectReference: {fileID: 0}
-    - target: {fileID: 4145173120867012550, guid: 134b8e96e7fd13d459ea265243fc956b,
-        type: 3}
-      propertyPath: speed
-      value: 8
-      objectReference: {fileID: 0}
-    - target: {fileID: 7791580053177836424, guid: 134b8e96e7fd13d459ea265243fc956b,
-        type: 3}
-      propertyPath: m_Sprite
-      value: 
-      objectReference: {fileID: 3136152300603956720, guid: 56faa61c0738e9b43b0b5aa082c87bb1,
-        type: 3}
-    - target: {fileID: 7791580053177836424, guid: 134b8e96e7fd13d459ea265243fc956b,
-        type: 3}
-      propertyPath: m_WasSpriteAssigned
-      value: 1
       objectReference: {fileID: 0}
     m_RemovedComponents: []
   m_SourcePrefab: {fileID: 100100000, guid: 134b8e96e7fd13d459ea265243fc956b, type: 3}

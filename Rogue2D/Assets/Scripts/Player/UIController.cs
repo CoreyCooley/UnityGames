@@ -18,6 +18,12 @@ public class UIController : MonoBehaviour
     public string newGameScene;
     public string mainMenuScene;
 
+    [Header("Weapon UI")]
+    public Image primaryWeapon;
+    public Text primaryWeaponName;
+    public Image secondaryWeapon;
+    public Text secondaryWeaponName;
+
     
     // Fading between levels
     public Image fadeScreen;
@@ -86,5 +92,60 @@ public class UIController : MonoBehaviour
     public void Resume()
     {
         levelManager.PauseUnpause();
+    }
+
+    public void UpdateWeaponUI(Gun primary, Gun secondary, bool isPrimarySelected)
+    {
+        if(isPrimarySelected)
+        {
+            UpdatePrimaryWeaponUI(primary, true);
+            UpdateSecondaryWeaponUI(secondary, false);
+        }
+        else
+        {
+            UpdatePrimaryWeaponUI(primary, false);
+            UpdateSecondaryWeaponUI(secondary, true);
+        }
+
+    }
+
+    private void UpdatePrimaryWeaponUI(Gun weapon, bool isSelected)
+    {
+        if(isSelected)
+        {
+            primaryWeapon.sprite = weapon.weaponUI;
+            primaryWeaponName.text = weapon.weaponName;
+
+            primaryWeapon.color = new Color(1, 1, 1, 1);
+            primaryWeaponName.color = new Color(1, 1, 1, 1);
+        }
+        else
+        {
+            primaryWeapon.sprite = weapon.weaponUI;
+            primaryWeaponName.text = weapon.weaponName;
+
+            primaryWeapon.color = new Color(1, 1, 1, 0.5f);
+            primaryWeaponName.color = new Color(1, 1, 1, 0.5f);
+        }
+    }
+
+    private void UpdateSecondaryWeaponUI(Gun weapon, bool isSelected)
+    {
+        if (isSelected)
+        {
+            secondaryWeapon.sprite = weapon.weaponUI;
+            secondaryWeaponName.text = weapon.weaponName;
+
+            secondaryWeapon.color = new Color(1, 1, 1, 1);
+            secondaryWeaponName.color = new Color(1, 1, 1, 1);
+        }
+        else
+        {
+            secondaryWeapon.sprite = weapon.weaponUI;
+            secondaryWeaponName.text = weapon.weaponName;
+
+            secondaryWeapon.color = new Color(1, 1, 1, 0.5f);
+            secondaryWeaponName.color = new Color(1, 1, 1, 0.5f);
+        }
     }
 }

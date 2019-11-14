@@ -25,6 +25,7 @@ public class PlayerController : MonoBehaviour
     private PlayerHealthController playerHealth;
     private AudioManager audioPlayer;
     private LevelManager levelManager;
+    private UIController uiController;
     
     // Dashing
     [Header("Dashing")]
@@ -40,11 +41,11 @@ public class PlayerController : MonoBehaviour
     public bool isMovable = true;
 
     [Header("Weapons")]
-    public List<Gun> weapons = new List<Gun>();
-    private int pistolSlot = 0;
-    private int shotgunSlot = 1;
-    private int ar15Slot = 2;
-    private int revolverSlot = 3;
+    //public List<Gun> weapons = new List<Gun>();
+    public Gun primaryWeapon;
+    public Gun secondaryWeapon;
+    private int primarySlot = 0;
+    private int secondarySlot = 1;
     private int currentWeapon;
     
     // Starts before start
@@ -63,8 +64,12 @@ public class PlayerController : MonoBehaviour
         playerHealth = PlayerHealthController.instance;
         audioPlayer = AudioManager.instance;
         levelManager = LevelManager.instance;
+        uiController = UIController.instance;
 
         activeMoveSpeed = moveSpeed;
+        currentWeapon = 0;
+
+        uiController.UpdateWeaponUI(primaryWeapon, secondaryWeapon, true);
     }
 
     // Update is called once per frame
@@ -98,43 +103,15 @@ public class PlayerController : MonoBehaviour
             float angle = Mathf.Atan2(offset.y, offset.x) * Mathf.Rad2Deg;
             gunArm.rotation = Quaternion.Euler(0, 0, angle);
 
-            // Gun Pick
-            if (Input.GetKeyDown(KeyCode.F))
+            // Switch to primary weapon
+            if (Input.GetKeyDown(KeyCode.Alpha1) && currentWeapon != primarySlot)
             {
-                if (weapons.Count > 0)
-                {
-                    currentWeapon++;
-                    if(currentWeapon >= weapons.Count)
-                    {
-                        currentWeapon = 0;
-                    }
-                    SwitchWeapon(currentWeapon);
-                }
-                else
-                {
-                    Debug.Log("Player has no guns");
-                }
+                SwitchWeapon(primarySlot);
             }
-
-            // Gun switch pistol
-            if(Input.GetKeyDown(KeyCode.Alpha1))
+            // Switch to secondary weapon
+            if (Input.GetKeyDown(KeyCode.Alpha2) && currentWeapon != secondarySlot)
             {
-                SwitchWeapon(pistolSlot);
-            }
-            // Gun switch shotgun
-            if (Input.GetKeyDown(KeyCode.Alpha2))
-            {
-                SwitchWeapon(shotgunSlot);
-            }
-            // Gun switch AR-15
-            if (Input.GetKeyDown(KeyCode.Alpha3))
-            {
-                SwitchWeapon(ar15Slot);
-            }
-            // Gun switch revolver
-            if (Input.GetKeyDown(KeyCode.Alpha4))
-            {
-                SwitchWeapon(revolverSlot);
+                SwitchWeapon(secondarySlot);
             }
 
             // Dash
@@ -182,10 +159,42 @@ public class PlayerController : MonoBehaviour
 
     public void SwitchWeapon(int slot)
     {
-        foreach(Gun gun in weapons)
+        currentWeapon = slot;
+
+        if(currentWeapon == primarySlot)
         {
-            gun.gameObject.SetActive(false);
+            uiController.UpdateWeaponUI(primaryWeapon, secondaryWeapon, true);
+            primaryWeapon.gameObject.SetActive(true);
+            secondaryWeapon.gameObject.SetActive(false);
         }
-        weapons[slot].gameObject.SetActive(true);
+        else
+        {
+            uiController.UpdateWeaponUI(primaryWeapon, secondaryWeapon, false);
+            primaryWeapon.gameObject.SetActive(false);
+            secondaryWeapon.gameObject.SetActive(true);
+        }
+    }
+
+    public void PickUpWeapon(Gun weapon)
+    {
+
+        Gun newWeapon = Instantiate(weapon);
+        newWeapon.transform.parent = gunArm;
+        newWeapon.transform.position = gunArm.position;
+        newWeapon.transform.localRotation = Quaternion.Euler(Vector3.zero);
+        newWeapon.transform.localScale = Vector3.one;
+
+        if(currentWeapon == primarySlot)
+        {
+            Destroy(primaryWeapon.gameObject);
+            primaryWeapon = newWeapon;
+        }
+        else
+        {
+            Destroy(secondaryWeapon.gameObject);
+            secondaryWeapon = newWeapon;
+        }
+
+        SwitchWeapon(currentWeapon);
     }
 }

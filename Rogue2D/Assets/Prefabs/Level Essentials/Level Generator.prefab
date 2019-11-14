@@ -87,6 +87,11 @@ MonoBehaviour:
   centerShop: {fileID: 7539300406611078302, guid: 9d314791347597149a9794fb45c7bbd2,
     type: 3}
   shopColor: {r: 1, g: 0.910864, b: 0, a: 1}
+  hasWeaponRoom: 1
+  weaponRoom: {fileID: 0}
+  centerWeaponRoom: {fileID: 7376854602627242367, guid: 3826ea79ddffa6740a7418e9e86a601c,
+    type: 3}
+  weaponColor: {r: 0.9528302, g: 0.47670683, b: 0, a: 0}
   roomCount: 10
   xOffset: 18
   yOffset: 10

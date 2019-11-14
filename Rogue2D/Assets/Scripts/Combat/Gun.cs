@@ -10,6 +10,9 @@ public class Gun : MonoBehaviour
     
     public int weaponSound = 12;
 
+    public string weaponName;
+    public Sprite weaponUI;
+
     private AudioManager audioPlayer;
     private PlayerController player;
     private LevelManager levelManager;

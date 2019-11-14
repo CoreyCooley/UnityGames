@@ -132,33 +132,33 @@ ScriptsOnlyBuild:
     - Class: 114
       Script: {instanceID: 10696}
     - Class: 114
-      Script: {instanceID: 10776}
+      Script: {instanceID: 10752}
     - Class: 114
-      Script: {instanceID: 10824}
+      Script: {instanceID: 10778}
     - Class: 114
-      Script: {instanceID: 10896}
+      Script: {instanceID: 10826}
     - Class: 114
-      Script: {instanceID: 10926}
+      Script: {instanceID: 10898}
     - Class: 114
-      Script: {instanceID: 11052}
+      Script: {instanceID: 10928}
     - Class: 114
-      Script: {instanceID: 11164}
+      Script: {instanceID: 11054}
     - Class: 114
-      Script: {instanceID: 11306}
+      Script: {instanceID: 11166}
     - Class: 114
-      Script: {instanceID: 11326}
+      Script: {instanceID: 11308}
     - Class: 114
-      Script: {instanceID: 11346}
+      Script: {instanceID: 11328}
     - Class: 114
-      Script: {instanceID: 11484}
+      Script: {instanceID: 11348}
     - Class: 114
-      Script: {instanceID: 11540}
+      Script: {instanceID: 11486}
     - Class: 114
-      Script: {instanceID: 11558}
+      Script: {instanceID: 11542}
     - Class: 114
-      Script: {instanceID: 11576}
+      Script: {instanceID: 11560}
     - Class: 114
-      Script: {instanceID: 28694}
+      Script: {instanceID: 11578}
     - Class: 115
       Script: {instanceID: 0}
     - Class: 128
@@ -221,11 +221,11 @@ ScriptsOnlyBuild:
     - Class: 114
       Script: {instanceID: 10676}
     - Class: 114
-      Script: {instanceID: 11164}
+      Script: {instanceID: 11166}
     - Class: 114
-      Script: {instanceID: 11484}
+      Script: {instanceID: 11486}
     - Class: 114
-      Script: {instanceID: 11540}
+      Script: {instanceID: 11542}
     - Class: 115
       Script: {instanceID: 0}
     - Class: 128
@@ -270,11 +270,11 @@ ScriptsOnlyBuild:
     - Class: 114
       Script: {instanceID: 10290}
     - Class: 114
-      Script: {instanceID: 11164}
+      Script: {instanceID: 11166}
     - Class: 114
-      Script: {instanceID: 11484}
+      Script: {instanceID: 11486}
     - Class: 114
-      Script: {instanceID: 11540}
+      Script: {instanceID: 11542}
     - Class: 115
       Script: {instanceID: 0}
     - Class: 128
@@ -608,6 +608,12 @@ ScriptsOnlyBuild:
     className: RawImage
   - hash:
       serializedVersion: 2
+      Hash: c9dd7a357b69e0e48959064f4b78b6fd
+    assemblyName: Assembly-CSharp.dll
+    namespaceName: 
+    className: Gun
+  - hash:
+      serializedVersion: 2
       Hash: 5ad4aa237d47ac2bab17bacb672edf7a
     assemblyName: UnityEngine.UI.dll
     namespaceName: UnityEngine.UI
@@ -620,7 +626,7 @@ ScriptsOnlyBuild:
     className: LevelGenerator
   - hash:
       serializedVersion: 2
-      Hash: a772622b8e16b165bd6e4e9564412f99
+      Hash: c051665401ff0d9dd50f189d1faf8d39
     assemblyName: Assembly-CSharp.dll
     namespaceName: 
     className: UIController
@@ -852,12 +858,6 @@ ScriptsOnlyBuild:
     assemblyName: Unity.Timeline.dll
     namespaceName: UnityEngine.Timeline
     className: PlayableTrack
-  - hash:
-      serializedVersion: 2
-      Hash: b3b6c24f140cddd611262849f2f27074
-    assemblyName: Assembly-CSharp.dll
-    namespaceName: 
-    className: Gun
   platform: 5
   scenePathNames:
   - Assets/Scenes/MainMenu.unity

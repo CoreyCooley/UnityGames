@@ -22,8 +22,13 @@ public class LevelGenerator : MonoBehaviour
     public GameObject shopRoom;
     public RoomCenter centerShop;
     public Color shopColor;
-    private int minDistanceToShop;
-    private int maxDistanceToShop;    
+
+    // Weapon Room
+    [Header("Weapon Room")]
+    public bool hasWeaponRoom;
+    public GameObject weaponRoom;
+    public RoomCenter centerWeaponRoom;
+    public Color weaponColor;
 
     public int roomCount;
     public float xOffset = 18f;
@@ -86,7 +91,15 @@ public class LevelGenerator : MonoBehaviour
             levelRooms.RemoveAt(shopSelector);
             shopRoom.GetComponent<SpriteRenderer>().color = shopColor;
         }
-        
+
+        if (hasWeaponRoom)
+        {
+            // Weapon Room
+            int weaponRoomSelector = Mathf.RoundToInt(Random.Range(roomCount * 0.1f, roomCount * 0.32f));
+            weaponRoom = levelRooms[weaponRoomSelector];
+            levelRooms.RemoveAt(weaponRoomSelector);
+            weaponRoom.GetComponent<SpriteRenderer>().color = weaponColor;
+        }        
 
         // End Room
         generatorPoint.position = MoveGenerationPoint(generatorPoint.position);

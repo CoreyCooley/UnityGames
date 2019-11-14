@@ -12,6 +12,33 @@ PrefabInstance:
       propertyPath: m_Name
       value: Revolver Bullet
       objectReference: {fileID: 0}
+    - target: {fileID: 7791580053177836424, guid: 134b8e96e7fd13d459ea265243fc956b,
+        type: 3}
+      propertyPath: m_Sprite
+      value: 
+      objectReference: {fileID: 7544857359372281921, guid: 56faa61c0738e9b43b0b5aa082c87bb1,
+        type: 3}
+    - target: {fileID: 7791580053177836424, guid: 134b8e96e7fd13d459ea265243fc956b,
+        type: 3}
+      propertyPath: m_WasSpriteAssigned
+      value: 1
+      objectReference: {fileID: 0}
+    - target: {fileID: 4145173120867012550, guid: 134b8e96e7fd13d459ea265243fc956b,
+        type: 3}
+      propertyPath: bulletDamage
+      value: 150
+      objectReference: {fileID: 0}
+    - target: {fileID: 4145173120867012550, guid: 134b8e96e7fd13d459ea265243fc956b,
+        type: 3}
+      propertyPath: speed
+      value: 9
+      objectReference: {fileID: 0}
+    - target: {fileID: 4145173120867012550, guid: 134b8e96e7fd13d459ea265243fc956b,
+        type: 3}
+      propertyPath: impactEffect
+      value: 
+      objectReference: {fileID: 7146664001029502765, guid: cd9dd4f3a650ebe42a7139cf2a42bdfd,
+        type: 3}
     - target: {fileID: 4145173120867012551, guid: 134b8e96e7fd13d459ea265243fc956b,
         type: 3}
       propertyPath: m_LocalPosition.x
@@ -66,27 +93,6 @@ PrefabInstance:
         type: 3}
       propertyPath: m_LocalEulerAnglesHint.z
       value: 0
-      objectReference: {fileID: 0}
-    - target: {fileID: 4145173120867012550, guid: 134b8e96e7fd13d459ea265243fc956b,
-        type: 3}
-      propertyPath: bulletDamage
-      value: 150
-      objectReference: {fileID: 0}
-    - target: {fileID: 4145173120867012550, guid: 134b8e96e7fd13d459ea265243fc956b,
-        type: 3}
-      propertyPath: speed
-      value: 9
-      objectReference: {fileID: 0}
-    - target: {fileID: 7791580053177836424, guid: 134b8e96e7fd13d459ea265243fc956b,
-        type: 3}
-      propertyPath: m_Sprite
-      value: 
-      objectReference: {fileID: 7544857359372281921, guid: 56faa61c0738e9b43b0b5aa082c87bb1,
-        type: 3}
-    - target: {fileID: 7791580053177836424, guid: 134b8e96e7fd13d459ea265243fc956b,
-        type: 3}
-      propertyPath: m_WasSpriteAssigned
-      value: 1
       objectReference: {fileID: 0}
     m_RemovedComponents: []
   m_SourcePrefab: {fileID: 100100000, guid: 134b8e96e7fd13d459ea265243fc956b, type: 3}

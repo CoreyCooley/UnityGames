@@ -99,8 +99,11 @@ MonoBehaviour:
     type: 3}
   firePoints:
   - {fileID: 6514813009449621461}
-  fireRate: 0.2
+  fireRate: 0.1
   weaponSound: 12
+  weaponName: AR-15
+  weaponUI: {fileID: -2172343002418747524, guid: f72804754a2106a4884d758772ef2a02,
+    type: 3}
 --- !u!1 &2505606914288487362
 GameObject:
   m_ObjectHideFlags: 0

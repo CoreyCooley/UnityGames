@@ -259,3 +259,5 @@ MonoBehaviour:
   - {fileID: 4828507308344036423}
   fireRate: 1
   weaponSound: 12
+  weaponName: Shotgun
+  weaponUI: {fileID: 141494655013890540, guid: f72804754a2106a4884d758772ef2a02, type: 3}

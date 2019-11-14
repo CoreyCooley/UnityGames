@@ -101,6 +101,9 @@ MonoBehaviour:
   - {fileID: 428304983900887408}
   fireRate: 1
   weaponSound: 12
+  weaponName: Revolver
+  weaponUI: {fileID: -3940896912681915257, guid: f72804754a2106a4884d758772ef2a02,
+    type: 3}
 --- !u!1 &9033467419851097447
 GameObject:
   m_ObjectHideFlags: 0

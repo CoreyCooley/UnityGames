@@ -10,7 +10,7 @@ PrefabInstance:
     - target: {fileID: 3301500178287532432, guid: 3f5cf031167440d499c255bccb8233c2,
         type: 3}
       propertyPath: m_Name
-      value: Bullet Impact
+      value: Orange Bullet Impact
       objectReference: {fileID: 0}
     - target: {fileID: 3301500178287532437, guid: 3f5cf031167440d499c255bccb8233c2,
         type: 3}
@@ -66,6 +66,41 @@ PrefabInstance:
         type: 3}
       propertyPath: m_LocalEulerAnglesHint.z
       value: 0
+      objectReference: {fileID: 0}
+    - target: {fileID: 3301500178287532434, guid: 3f5cf031167440d499c255bccb8233c2,
+        type: 3}
+      propertyPath: InitialModule.startColor.minMaxState
+      value: 4
+      objectReference: {fileID: 0}
+    - target: {fileID: 3301500178287532434, guid: 3f5cf031167440d499c255bccb8233c2,
+        type: 3}
+      propertyPath: InitialModule.startColor.maxGradient.key0.r
+      value: 1
+      objectReference: {fileID: 0}
+    - target: {fileID: 3301500178287532434, guid: 3f5cf031167440d499c255bccb8233c2,
+        type: 3}
+      propertyPath: InitialModule.startColor.maxGradient.key0.g
+      value: 1
+      objectReference: {fileID: 0}
+    - target: {fileID: 3301500178287532434, guid: 3f5cf031167440d499c255bccb8233c2,
+        type: 3}
+      propertyPath: InitialModule.startColor.maxGradient.key0.b
+      value: 1
+      objectReference: {fileID: 0}
+    - target: {fileID: 3301500178287532434, guid: 3f5cf031167440d499c255bccb8233c2,
+        type: 3}
+      propertyPath: InitialModule.startColor.maxGradient.key1.g
+      value: 0.52156866
+      objectReference: {fileID: 0}
+    - target: {fileID: 3301500178287532434, guid: 3f5cf031167440d499c255bccb8233c2,
+        type: 3}
+      propertyPath: InitialModule.startColor.maxGradient.key1.r
+      value: 0.9960785
+      objectReference: {fileID: 0}
+    - target: {fileID: 3301500178287532434, guid: 3f5cf031167440d499c255bccb8233c2,
+        type: 3}
+      propertyPath: InitialModule.startColor.maxGradient.key1.b
+      value: 0.007843138
       objectReference: {fileID: 0}
     m_RemovedComponents: []
   m_SourcePrefab: {fileID: 100100000, guid: 3f5cf031167440d499c255bccb8233c2, type: 3}
