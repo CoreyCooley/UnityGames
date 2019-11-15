@@ -48,6 +48,10 @@ public class WeaponChest : MonoBehaviour
                 transform.localScale = new Vector3(1.2f, 1.2f, 1.2f);
             }
         }
+        else
+        {
+            notification.SetActive(inChestZone);
+        }
         if(isOpen)
         {
             transform.localScale = Vector3.MoveTowards(transform.localScale, Vector3.one, Time.deltaTime * scaleSpeed);
