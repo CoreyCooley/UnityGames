@@ -82,6 +82,12 @@ PrefabInstance:
       propertyPath: isPatrolling
       value: 0
       objectReference: {fileID: 0}
+    - target: {fileID: 8475189439923513088, guid: 92654d2688c6fbc44bb856c69388974b,
+        type: 3}
+      propertyPath: hitEffect
+      value: 
+      objectReference: {fileID: 7717138087558102061, guid: 32c4a469c3171704aad6dc1e53442327,
+        type: 3}
     - target: {fileID: 342233769760875785, guid: 92654d2688c6fbc44bb856c69388974b,
         type: 3}
       propertyPath: m_Sprite
