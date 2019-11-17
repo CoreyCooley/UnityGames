@@ -620,7 +620,7 @@ ScriptsOnlyBuild:
     className: RawImage
   - hash:
       serializedVersion: 2
-      Hash: c9dd7a357b69e0e48959064f4b78b6fd
+      Hash: 6e04e1a87bd2c69fdd16052846cf0ec8
     assemblyName: Assembly-CSharp.dll
     namespaceName: 
     className: Gun
@@ -848,7 +848,7 @@ ScriptsOnlyBuild:
     className: Toggle
   - hash:
       serializedVersion: 2
-      Hash: 247d60abfcd11096b82ad58177a8e06a
+      Hash: dcc091c0917afc148235241c578edf04
     assemblyName: Assembly-CSharp.dll
     namespaceName: 
     className: ShopItem

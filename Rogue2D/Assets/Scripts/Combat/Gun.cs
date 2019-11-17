@@ -12,6 +12,8 @@ public class Gun : MonoBehaviour
 
     public string weaponName;
     public Sprite weaponUI;
+    public int weaponCost;
+    public Sprite weaponSprite;
 
     private AudioManager audioPlayer;
     private PlayerController player;

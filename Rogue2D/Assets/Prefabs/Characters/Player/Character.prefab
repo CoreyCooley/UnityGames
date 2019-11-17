@@ -16,7 +16,7 @@ GameObject:
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
   m_StaticEditorFlags: 0
-  m_IsActive: 1
+  m_IsActive: 0
 --- !u!4 &5405630780587000367
 Transform:
   m_ObjectHideFlags: 0
@@ -528,9 +528,6 @@ MonoBehaviour:
   dashInvincibility: 0.5
   dashCounter: 0
   isMovable: 1
-  weapons:
-  - {fileID: 6529968809378219071}
-  - {fileID: 2448775411872742458}
   primaryWeapon: {fileID: 6529968809378219071}
   secondaryWeapon: {fileID: 2448775411872742458}
 --- !u!1001 &1317238289917771051

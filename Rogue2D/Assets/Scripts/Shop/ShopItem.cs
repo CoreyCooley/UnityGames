@@ -22,11 +22,18 @@ public class ShopItem : MonoBehaviour
     public int buySound;
     public int failedSound;
 
+    // Gun Item
+    public Gun[] potentialWeapons;
+    private Gun weapon;
+    
+    public SpriteRenderer itemSprite;
+
     private bool inBuyZone;
 
     private LevelManager levelManager;
     private PlayerHealthController playerHealth;
     private AudioManager audioManager;
+    private PlayerController player;
 
     // Start is called before the first frame update
     void Start()
@@ -34,8 +41,21 @@ public class ShopItem : MonoBehaviour
         levelManager = LevelManager.instance;
         playerHealth = PlayerHealthController.instance;
         audioManager = AudioManager.instance;
+        player = PlayerController.instance;    
 
-        boardMsg.text = itemDescription + System.Environment.NewLine + "- " + itemCost + " Gold - ";        
+        if(isWeapon)
+        {
+            int selectedWeapon = Random.Range(0, potentialWeapons.Length);
+            Debug.Log("Selected Shop Weapon " + selectedWeapon);
+            weapon = potentialWeapons[selectedWeapon];
+
+            itemSprite.sprite = weapon.weaponSprite;
+            itemDescription = weapon.weaponName;
+            itemCost = weapon.weaponCost;
+        }
+
+        boardMsg.text = itemDescription + System.Environment.NewLine + "- " + itemCost + " Gold - ";
+        
     }
 
     // Update is called once per frame
@@ -61,7 +81,7 @@ public class ShopItem : MonoBehaviour
                     }
                     if (isWeapon)
                     {
-                        // Add weapon to player
+                        player.PickUpWeapon(weapon);
                     }
 
                     gameObject.SetActive(false);
