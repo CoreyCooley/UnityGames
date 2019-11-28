@@ -35,5 +35,8 @@ MonoBehaviour:
   - Fire
   - RespawnSpaceship
   - FlipSpritX
+  - Destory
+  - FlipPlayer
+  - UpdateHealth
   DisableAutoOpenWizard: 1
   ShowSettings: 0

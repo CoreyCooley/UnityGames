@@ -2,6 +2,7 @@
 using System.Collections.Generic;
 using UnityEngine;
 using Photon.Pun;
+using UnityEngine.UI;
 using System;
 
 public class Player : MonoBehaviourPun
@@ -12,6 +13,11 @@ public class Player : MonoBehaviourPun
     public PhotonView photonVw;
     public Animator animator;
 
+    public GameObject bulletPrefab;
+    public Transform firePoint;
+
+    public Text playerName;
+
     private bool canMove = true;
 
     public float moveSpeed = 5f;
@@ -20,7 +26,16 @@ public class Player : MonoBehaviourPun
     {
         // Checks if it is the local player's camera
         if(photonView.IsMine)
+        {
             playerCamera.SetActive(true);
+            //playerName.text = PhotonNetwork.NickName;
+            //playerName.color = Color.green;
+        }
+        else
+        {
+            playerName.text = photonVw.Owner.NickName;
+            playerName.color = Color.red;
+        }
     }
 
     // Start is called before the first frame update
@@ -50,7 +65,7 @@ public class Player : MonoBehaviourPun
         {
             Shoot();
         }
-        else if (Input.GetKeyUp(KeyCode.Mouse0))
+        else //if (Input.GetKeyUp(KeyCode.Mouse0))
         {
             animator.SetBool("isShooting", false);
             canMove = true;
@@ -61,7 +76,7 @@ public class Player : MonoBehaviourPun
         if(Input.GetKeyDown(KeyCode.D) && !animator.GetBool("isShooting"))
         {
             animator.SetBool("isMoving", true);
-            photonVw.RPC("FlipSpritX",RpcTarget.AllBuffered,false);
+            photonVw.RPC("FlipPlayer",RpcTarget.AllBuffered,false);
         }
         else if (Input.GetKeyUp(KeyCode.D))
         {
@@ -72,7 +87,7 @@ public class Player : MonoBehaviourPun
         if (Input.GetKeyDown(KeyCode.A) && !animator.GetBool("isShooting"))
          {
             animator.SetBool("isMoving", true);
-            photonVw.RPC("FlipSpritX", RpcTarget.AllBuffered,true);
+            photonVw.RPC("FlipPlayer", RpcTarget.AllBuffered,true);
          }
         else if (Input.GetKeyUp(KeyCode.A))
         {
@@ -83,13 +98,26 @@ public class Player : MonoBehaviourPun
     private void Shoot()
     {
         animator.SetBool("isShooting", true);
+        PhotonNetwork.Instantiate(bulletPrefab.name, firePoint.position, firePoint.rotation, 0);
+
         canMove = false;
     }
 
     // PunRPC required to do the network sync
     [PunRPC]
-    private void FlipSpritX(bool isFlipped)
+    private void FlipPlayer(bool isFlipped)
     {
-        spriteRenderer.flipX = isFlipped;
+        if(isFlipped)
+        {
+            transform.localScale = new Vector3(-1f, 1f, 1f);
+            playerName.transform.rotation = Quaternion.Euler(0, 180, 0);
+            firePoint.rotation = Quaternion.Euler(0, 180, 0);
+        }
+        else
+        {
+            transform.localScale = Vector3.one;
+            playerName.transform.rotation = Quaternion.Euler(0, 0, 0);
+            firePoint.rotation = Quaternion.Euler(0, 0, 0);
+        }        
     }
 }
