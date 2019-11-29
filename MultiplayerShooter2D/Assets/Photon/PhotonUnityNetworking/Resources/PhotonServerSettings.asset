@@ -38,5 +38,7 @@ MonoBehaviour:
   - Destory
   - FlipPlayer
   - UpdateHealth
+  - Death
+  - Revive
   DisableAutoOpenWizard: 1
   ShowSettings: 0
