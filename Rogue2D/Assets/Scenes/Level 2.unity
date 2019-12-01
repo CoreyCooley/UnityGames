@@ -261,6 +261,11 @@ PrefabInstance:
       propertyPath: m_LocalEulerAnglesHint.z
       value: 0
       objectReference: {fileID: 0}
+    - target: {fileID: 4086231212566138114, guid: 3ca73dbed9901184cb086bd389970209,
+        type: 3}
+      propertyPath: roomCount
+      value: 14
+      objectReference: {fileID: 0}
     m_RemovedComponents: []
   m_SourcePrefab: {fileID: 100100000, guid: 3ca73dbed9901184cb086bd389970209, type: 3}
 --- !u!1 &1198434692
@@ -508,10 +513,6 @@ PrefabInstance:
         type: 3}
       propertyPath: m_Enabled
       value: 1
-      objectReference: {fileID: 0}
-    - target: {fileID: 2043588225, guid: ee474c9f51b26e8439c9db465ef7c250, type: 3}
-      propertyPath: nextLevel
-      value: Level 2
       objectReference: {fileID: 0}
     m_RemovedComponents: []
   m_SourcePrefab: {fileID: 100100000, guid: ee474c9f51b26e8439c9db465ef7c250, type: 3}
